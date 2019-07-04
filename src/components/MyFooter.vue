@@ -70,17 +70,17 @@
                         }
                     ],
                 },
-                {
-                    title: 'CASES',
-                    items: [
-                        {
-                            nl: 'GYG',
-                            en: 'GYG',
-                            link: '/cases/GYG',
-                            new:true
-                        }
-                    ]
-                },
+                // {
+                //     title: 'CASES',
+                //     items: [
+                //         {
+                //             nl: 'GYG',
+                //             en: 'GYG',
+                //             link: '/cases/GYG',
+                //             new:true
+                //         }
+                //     ]
+                // },
                 {
                     title: 'SOCIALS',
                     items: [
@@ -94,6 +94,11 @@
                             en: 'Facebook',
                             webLink: 'https://www.facebook.com/stijn.klarenbeek.94'
                         },
+                        {
+                            nl: 'AngelList',
+                            en: 'AngelList',
+                            webLink: 'https://angel.co/stijn-klarenbeek'
+                        }
                     ],
                     style: {
                         width:'80px'

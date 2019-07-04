@@ -72,6 +72,8 @@
                 </div>
             </compartment>
         </div>
+
+        <MyFooter/>
     </div>
 </template>
 
@@ -83,6 +85,8 @@
     import SkillItem from '@/components/Core/Items/SkillItem';
     import ContactItem from '@/components/Core/Items/ContactItem';
     import {mapGetters} from 'vuex';
+
+    import MyFooter from '@/components/MyFooter';
 
     export default {
         name: 'home',
@@ -106,44 +110,6 @@
             increaseProgressSkillInterval: null
         }),
         methods: {
-            // increaseProgress() {
-            //     let progressFill = document.getElementById('progressFill');
-            //     progressFill.style.width = '0px';
-            //     let percentTime = 0;
-            //     this.skills.seconds = this.skillsCounter / 1000;
-            //
-            //     if (this.skills.currentActive < this.skills.items.length - 1) {
-            //         this.skills.items[this.skills.currentActive].active = false;
-            //         this.skills.currentActive += 1;
-            //         this.skills.items[this.skills.currentActive].active = true;
-            //     } else {
-            //         this.skills.items[this.skills.currentActive].active = false;
-            //         this.skills.currentActive = 0;
-            //         this.skills.items[0].active = true;
-            //     }
-            //
-            //     let id = setInterval(() => {
-            //         if (percentTime >= 100) {
-            //             clearInterval(id);
-            //         }
-            //         percentTime += 1 / (this.skills.seconds + 0.1);
-            //         progressFill.style.width = percentTime + '%';
-            //     }, this.skills.interval);
-            // },
-            // loopThroughSkills() {
-            //   this.skillInterval = setInterval(() => {
-            //     this.increaseProgress();
-            //   }, this.skillsCounter);
-            // },
-            // moveToSkill(index) {
-            // document.getElementById('progressFill').style.width = '0px';
-            // clearInterval(this.skillInterval);
-            // clearInterval(this.increaseProgressSkillInterval);
-            // this.skills.items[this.skills.currentActive].active = false;
-            // this.skills.currentActive = index;
-            // this.skills.items[index].active = true;
-            // this.loopThroughSkills();
-            // },
             paginatedWork(page) {
                 let beginIndex = (page * this.work.pagination.perPage - 2) - 1;
                 let endIndex = (beginIndex + this.work.pagination.perPage);
@@ -164,13 +130,6 @@
                 contact: 'getContact'
             })
         },
-        mounted() {
-            // this.loopThroughSkills();
-        },
-        beforeDestroy() {
-            // clearInterval(this.skillInterval);
-            // clearInterval(this.increaseProgressSkillInterval);
-        },
         props: {
             msg: String
         },
@@ -179,7 +138,8 @@
             SchoolWorkItem,
             Pagination,
             SkillItem,
-            ContactItem
+            ContactItem,
+            MyFooter
         }
     }
 </script>
@@ -188,7 +148,6 @@
     .home {
         position: relative;
         z-index: 3;
-        padding-bottom: 96px;
         padding-top: 96px;
     }
 
