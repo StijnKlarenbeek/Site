@@ -1,6 +1,8 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Home from './views/Home.vue'
+import Work from './views/Work.vue'
+import NotFound from './views/NotFound.vue'
 
 Vue.use(Router)
 
@@ -16,12 +18,12 @@ export default new Router({
     {
       path: '/work',
       name: 'work',
-      component: () => import('@/views/Work.vue')
+      component: Work
     },
     {
       path: '*',
       name: '404',
-      component: () => import('@/views/NotFound.vue')
+      component: NotFound
     }
   ]
 })
