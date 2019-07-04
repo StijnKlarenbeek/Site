@@ -197,5 +197,8 @@
         #nav {
             padding: 24px;
         }
+        #nav .right a{
+            padding-left: 24px;
+        }
     }
 </style>

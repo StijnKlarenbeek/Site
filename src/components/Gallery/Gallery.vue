@@ -207,6 +207,11 @@
     .gallery-content .gallery-item:hover .inner .filter.Software{
         text-decoration: underline #4353ff;
     }
+    @media screen and (max-width:1024px) {
+        .gallery-content .gallery-item {
+            width: 50%;
+        }
+    }
     @media screen and (max-width:768px) {
         .gallery ul{
             top: 70px;
