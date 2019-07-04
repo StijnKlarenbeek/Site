@@ -53,7 +53,7 @@
     .split-container .left,.split-container .right{
         width: 50%;
         overflow: hidden;
-        background: #000;
+        background: #0b0b0b;
     }
     .split-container .content-cont{
         display: flex;

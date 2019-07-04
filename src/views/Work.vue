@@ -45,12 +45,19 @@
             </template>
         </split-container>
         <div class="gallery">
-            <div class="gallery-row">
-                <div class="item">
-                    <img src="/assets/Savemegalleryexport.png" alt="">
-                </div>
-                <div class="item"></div>
-            </div>
+            <h1>
+                More creations
+            </h1>
+            <gallery :filters="gallery.filters" :items="gallery.items"></gallery>
+            <!--<div class="gallery-filter-row">-->
+
+            <!--</div>-->
+            <!--<div class="gallery-row">-->-
+                <!--<div class="item">-->
+                    <!--<img src="/img/assets/Savemegalleryexport.png" alt="">-->
+                <!--</div>-->
+                <!--<div class="item"></div>-->
+            <!--</div>-->
         </div>
 
         <MyFooter/>
@@ -68,8 +75,25 @@
 
     import MyFooter from '@/components/MyFooter';
 
+    import Gallery from '@/components/Gallery/Gallery';
+
     export default {
         name: "Work",
+        data: () =>({
+            gallery: {
+                filters: [
+                    'All', 'Design concept', 'Web template', 'Software'
+                ],
+                items: [
+                    {
+                        title: 'Save me',
+                        filter: 'Design concept',
+                        link: '/',
+                        img: '/img/assets/Savemegalleryexport.png'
+                    }
+                ]
+            },
+        }),
         components: {
             SplitContainer,
 
@@ -79,7 +103,8 @@
 
             MyLink,
 
-            MyFooter
+            MyFooter,
+            Gallery
         }
     }
 </script>
@@ -92,12 +117,14 @@
         /*padding-top: 96px;*/
 
     }
+
     .hero{
         background: url('/img/work/purplehero.png');
         background-size:100% 100%;
         height: 587px;
         width: 100%;
     }
+
     .hero h1{
         padding-top: 186px;
         padding-left: 48px;
@@ -105,6 +132,7 @@
         font-size: 3.75rem;
         line-height: 3.75rem;
     }
+
     .hero h2{
         padding-left: 48px;
         margin-top: 32px;
@@ -114,11 +142,24 @@
         font-weight: normal;
      }
 
+    .gallery{
+        width: 100%;
+        height:auto;
+        background: #000;
+    }
+
+    .gallery h1 {
+        padding-top: 92px;
+        padding-left: 48px;
+        padding-right: 48px;
+        color: #fff;
+        font-size: 3.75rem;
+        line-height: 3.75rem;
+    }
+
     .mt-2{
         margin-top: 24px;
     }
-
-
 
     @media screen and (max-width: 1280px) {
         .hero{
