@@ -10,7 +10,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
     .page404{
         padding-left: 48px;
         min-width: 100vw;
