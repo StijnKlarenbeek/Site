@@ -17,6 +17,11 @@ export default new Router({
       path: '/work',
       name: 'work',
       component: () => import('@/views/Work.vue')
+    },
+    {
+      path: '*',
+      name: '404',
+      component: () => import('@/views/NotFound.vue')
     }
   ]
 })
