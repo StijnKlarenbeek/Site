@@ -196,6 +196,8 @@
         }
         #nav {
             padding: 24px;
+            padding-top: 8px;
+            padding-bottom: 8px;
         }
         #nav .right a{
             padding-left: 24px;

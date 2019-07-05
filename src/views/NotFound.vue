@@ -12,13 +12,18 @@ export default {
 
 <style scoped>
     .page404{
-        padding-left: 48px;
+        /* padding-left: 48px; */
         min-width: 100vw;
         min-height: 100vh;
         position: relative;
         top:0;
         z-index: 3;
-        padding-top: 112px;
+        /* padding-top: 112px; */
+        background:#000;
+        display:flex;
+        justify-content: center;
+        align-items:center;
+        flex-direction:column;
     }
     h1{
         font-size: 365px;
