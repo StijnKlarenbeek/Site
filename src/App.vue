@@ -2,7 +2,9 @@
     <div id="app">
         <Nav/>
         <img class="me-img" src="img/forthebf.png">
-        <router-view/>
+        <transition name="component-fade" mode="out-in">
+            <router-view/>
+        </transition>
     </div>
 </template>
 
@@ -46,6 +48,14 @@
         top:0;
         right:48px;
         z-index: 2;
+    }
+
+    .component-fade-enter-active, .component-fade-leave-active {
+        transition: opacity .3s ease;
+    }
+    .component-fade-enter, .component-fade-leave-to
+        /* .component-fade-leave-active below version 2.1.8 */ {
+        opacity: 0;
     }
     @media screen and (max-width:468px) {
         .me-img {

@@ -8,10 +8,12 @@ import './registerServiceWorker';
 import AOS from 'aos';
 import 'aos/dist/aos.css'; // You can also use <link> for styles
 
+import GlobalComponents from './index';
 
 // Vue.use(VueFullPage);
 
 Vue.config.productionTip = false;
+Vue.use(GlobalComponents);
 
 new Vue({
   created() {

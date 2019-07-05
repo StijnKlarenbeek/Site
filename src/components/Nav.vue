@@ -23,6 +23,17 @@
             <router-link to="/work">
                 Work
             </router-link>
+            <dropdown-menu>
+                CV
+                <template v-slot:dropdown>
+                    <li>
+                        <a target="_blank" href="/img/cv/CV.png">View image</a>
+                    </li>
+                    <li>
+                        <a target="_blank" href="/img/cv/CV.pdf">Download PDF</a>
+                    </li>
+                </template>
+            </dropdown-menu>
             <!--<router-link ref="dutch" to="/" @click="switchLanguage('dutch','uk')">-->
                 <!--<img src="/img/dutchflag.svg" alt="">-->
             <!--</router-link>-->
@@ -34,6 +45,8 @@
 </template>
 
 <script>
+    import DropdownMenu from '@/components/Core/Buttons/DropdownMenu';
+
     export default {
         name: "Nav",
         data: () => ({
@@ -52,6 +65,9 @@
                 document.getElementsByClassName('navburgerbars')[0].classList.toggle('active');
                 document.getElementById("nav").classList.toggle('active');
             }
+        },
+        components: {
+            DropdownMenu
         }
     }
 </script>
@@ -78,6 +94,8 @@
             color: rgba(255,255,255,.4);
             display:inline-block;
             box-sizing:border-box;
+            margin-right: 16px;
+            margin-left: 16px;
 
             &.brand {
                 opacity: 1;
@@ -135,6 +153,37 @@
     }
     .burger .navburgerbars.active .bottom {
         stroke-dashoffset: -132px;
+    }
+
+
+    .dropdown-wrapper ul li{
+        display:block !important;
+        width:100%;
+        margin: 0 !important;
+    }
+    .dropdown-wrapper ul li a{
+        padding-top: 12px;
+        padding-bottom: 12px;
+        padding-right: 32px;
+        padding-left: 32px;
+        box-sizing: border-box !important;
+        display:block !important;
+        width:auto;
+        border-radius:4px;
+        color:#595959 !important;
+        font-weight: normal !important;
+        font-size: 1.2rem !important;
+        margin-right: 8px !important;
+        margin-left: 8px !important;
+        transition:250ms;
+    }
+    .dropdown-wrapper ul li a:hover{
+        background:#4353ff;
+        color:white !important;
+        -webkit-box-shadow: 0px 13px 57px -12px rgba(67,83,255,1);
+        -moz-box-shadow: 0px 13px 57px -12px rgba(67,83,255,1);
+        box-shadow: 0px 13px 57px -12px rgba(67,83,255,1);
+        transition:250ms;
     }
 
     @media screen and (min-width: 768px) {
