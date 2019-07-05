@@ -31,7 +31,7 @@
              data-aos-delay="150"
              data-aos-duration="750">
             <span class="copyright">
-                &#9400; 2018 - {{year}} Stijn Klarenbeek &mdash; All rights reserved
+                &#9400; 2018 - {{year}} Stijn Klarenbeek &mdash; All rights reserved &nbsp;&mdash;&nbsp; <router-link to="/license">license and terms</router-link>
             </span>
         </div>
     </footer>
@@ -147,6 +147,9 @@
         display:inline-block;
         margin-left: 66px;
         margin-top: 16px;
+    }
+    span.copyright a{
+        color:#68FFD1;
     }
 
     .mr-3{

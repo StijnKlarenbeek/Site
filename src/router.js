@@ -19,6 +19,11 @@ export default new Router({
       component: () => import('@/views/Work.vue')
     },
     {
+      path: '/license',
+      name: 'license',
+      component: () => import('@/views/License.vue')
+    },
+    {
       path: '*',
       name: '404',
       component: () => import('@/views/NotFound.vue')
