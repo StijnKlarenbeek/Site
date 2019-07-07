@@ -14,10 +14,22 @@ export default new Router({
       component: Home
     },
     {
-      path: '/work',
-      name: 'work',
-      component: () => import('@/views/Work.vue')
+      path: '/projects',
+      name: 'projects',
+      component: () => import('@/views/Projects.vue')
     },
+    {
+      path: '/projects',
+      name: 'projects',
+      component: () => import('@/views/Projects.vue')
+    },
+    // Sub paths of projects
+    {
+      path: '/projects/saveme',
+      name: 'savemeproject',
+      component: () => import('@/views/projects/SaveMe.vue')
+    },
+
     {
       path: '/license',
       name: 'license',

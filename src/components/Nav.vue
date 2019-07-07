@@ -20,8 +20,8 @@
             </router-link>
         </div>
         <div class="right">
-            <router-link to="/work">
-                Work
+            <router-link to="/projects">
+                Projects
             </router-link>
             <dropdown-menu>
                 CV

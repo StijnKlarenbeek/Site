@@ -88,7 +88,7 @@
                     {
                         title: 'Save me',
                         filter: 'Design concept',
-                        link: '/',
+                        link: '/projects/saveme',
                         img: '/img/assets/Savemegalleryexport.png'
                     }
                 ]
