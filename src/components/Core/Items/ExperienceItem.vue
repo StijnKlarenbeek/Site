@@ -1,5 +1,6 @@
 <template>
     <div class="skill" :data-aos="animation" :data-aos-duration="animationDuration" :data-aos-delay="animationDelay">
+        <!-- Top row contains title and date-->
         <div class="skill-row">
             <span class="title">
                 {{title}}
@@ -8,6 +9,8 @@
                 {{date}}
             </span>
         </div>
+
+        <!--Bottom row contains the location-->
         <div class="skill-row">
             <span class="location">
                 {{location}}
@@ -18,17 +21,35 @@
 
 <script>
     export default {
-        name: "SchoolWorkItem",
+        name: "ExperienceItem",
         props: {
+            /**
+             * What experience did you get?
+             */
             title: {
-                type: String
+                type: String,
+                required: true
             },
+
+            /**
+             * When did you get the experience
+             */
             date: {
-                type: String
+                type: String,
+                required: true
             },
+
+            /**
+             * Where did you get the experience
+             */
             location: {
-                type: String
+                type: String,
+                required: true
             },
+
+            /**
+             * AOS animation settings
+             */
             animation: {
                 type: String
             },
@@ -57,6 +78,7 @@
         align-items: center;
     }
 
+    /**Text styling**/
     .title {
         font-size: 1.5rem;
         font-weight: bold;
@@ -64,8 +86,6 @@
 
     .date {
         color: #68FFD1;
-        /*color: #FF4387;*/
-        /*color: #F5BA78;*/
         font-size: 1.25rem;
         font-weight: 600;
     }
@@ -87,6 +107,8 @@
         .skill .skill-row {
             flex-wrap: wrap;
         }
+
+        /**We change the order for small screens to have date on top**/
         .skill .date {
             order:1;
             width: 100%;

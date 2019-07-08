@@ -1,4 +1,5 @@
 <template>
+    <!-- Print an unordered list with a title-->
     <ul>
         <li class="title">{{title}}</li>
         <slot></slot>
@@ -41,6 +42,9 @@
         padding-top: 8px;
         padding-bottom: 8px;
         text-decoration: none;
+    }
+    ul li a:hover {
+        text-decoration:underline;
     }
 
 

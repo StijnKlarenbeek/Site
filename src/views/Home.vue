@@ -16,7 +16,7 @@
                 <template v-slot:title>
                     02. Scholing
                 </template>
-                <SchoolWorkItem v-for="(school,index) in scholing"
+                <ExperienceItem v-for="(school,index) in scholing"
                                 :key="index"
                                 v-bind="school"/>
             </compartment>
@@ -24,7 +24,7 @@
                 <template v-slot:title>
                     03. Werkervaring
                 </template>
-                <SchoolWorkItem v-for="(work,index) in paginatedWork(work.pagination.currentPage)"
+                <ExperienceItem v-for="(work,index) in paginatedWork(work.pagination.currentPage)"
                                 :key="index"
                                 v-bind="work"/>
                 <pagination :total-pages="work.pagination.totalPages"
@@ -42,8 +42,7 @@
                         <div class="skill-item-grid">
                             <skill-item v-for="(skill, index) in skills.items"
                                         :key="index"
-                                        v-bind="skill"
-                                        @click.native="moveToSkill(index)"></skill-item>
+                                        v-bind="skill"></skill-item>
                         </div>
                     </div>
                 </div>
@@ -81,7 +80,7 @@
     import Compartment from '@/components/Compartment';
     import Pagination from '@/components/Pagination';
 
-    import SchoolWorkItem from '@/components/Core/Items/SchoolWorkItem';
+    import ExperienceItem from '@/components/Core/Items/ExperienceItem';
     import SkillItem from '@/components/Core/Items/SkillItem';
     import ContactItem from '@/components/Core/Items/ContactItem';
     import {mapGetters} from 'vuex';
@@ -135,7 +134,7 @@
         },
         components: {
             Compartment,
-            SchoolWorkItem,
+            ExperienceItem,
             Pagination,
             SkillItem,
             ContactItem,

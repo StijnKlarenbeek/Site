@@ -1,8 +1,12 @@
 <template>
+    <!-- Split container-->
     <div class="split-container">
+        <!-- Left container -->
         <div :class="leftClasses">
             <slot name="left"></slot>
         </div>
+
+        <!-- Right container -->
         <div :class="rightClasses">
             <slot name="right"></slot>
         </div>
@@ -13,6 +17,11 @@
     export default {
         name: "SplitContainer",
         props: {
+            /**
+             * The position of the image can be either of two values:
+             *  left: Img will come in the left container
+             *  right: Img will come in the right container
+             */
             imgPos : {
                 type: String,
                 default: 'left',
@@ -22,13 +31,22 @@
             }
         },
         computed: {
+            /**
+             * Determine the classes for the left container
+             * based on the imgPos(ition) prop
+             */
             leftClasses() {
                 return {
                     'left': true,
                     'img-cont': this.imgPos === 'left',
                     'content-cont': this.imgPos === 'right',
                 }
-            }    ,
+            },
+
+            /**
+             * Determine the classes for the right container
+             * based on the imgPos(ition) prop
+             */
             rightClasses() {
                 return {
                     'right': true,
@@ -41,6 +59,7 @@
 </script>
 
 <style scoped>
+    /**Split container**/
     .split-container{
         width: 100%;
         height: auto;
@@ -50,11 +69,15 @@
         align-items: stretch;
         height: 500px;
     }
-    .split-container .left,.split-container .right{
+
+    /**Set the default styles for both containers**/
+    .split-container .left, .split-container .right{
         width: 50%;
         overflow: hidden;
         background: #0b0b0b;
     }
+
+    /**The styles for the text content container**/
     .split-container .content-cont{
         display: flex;
         justify-content: center;
@@ -63,6 +86,8 @@
         padding-left: 144px;
         padding-right: 144px;
     }
+
+    /**Styles for the img part of the split container**/
     .split-container .img-cont img{
         object-fit: cover;
         width: 100%;
@@ -93,6 +118,8 @@
             padding-right: 48px;
         }
     }
+
+    /**Default wrap at 768px**/
     @media screen and (max-width: 768px) {
         .split-container{
             flex-wrap:wrap;

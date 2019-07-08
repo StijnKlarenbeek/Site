@@ -1,40 +1,49 @@
 <template>
-    <!--<div :class="skillItemClasses">-->
-        <div class="skill-item"
-             :data-aos="animation"
-             :data-aos-duration="animationDuration"
-             :data-aos-delay="animationDelay">
-            <div :class="classes" :style="styles"></div>
-            <div class="skill-row texted mt32">
-                {{title}}
-            </div>
+    <div class="skill-item"
+            :data-aos="animation"
+            :data-aos-duration="animationDuration"
+            :data-aos-delay="animationDelay">
+        <!-- the colored container -->
+        <div :class="classes" :style="styles"></div>
+
+        <!-- The title of the skill-->
+        <div class="skill-row texted mt32">
+            {{title}}
         </div>
-    <!--</div>-->
+    </div>
 </template>
 
 <script>
     export default {
         name: "SkillItem",
         props: {
+            /**
+             * The skill name
+             */
             title: {
-                type: String
+                type: String,
+                required: true
             },
-            active: {
-                type: Boolean,
-                default: false
-            },
+
+            /** 
+             * The color of the colored container
+             */
             background: {
                 type: String,
                 default: '#fff'
             },
-            colored: {
-                type: Boolean,
-                default: true
-            },
+
+            /**
+             * Makes the container rounded
+             */
             rounded: {
                 type: Boolean,
                 default: true
             },
+
+            /**
+             * Aos animation settings
+             */
             animation: {
                 type: String
             },
@@ -46,20 +55,22 @@
             }
         },
         computed: {
-            skillItemClasses(){
-                return {
-                    'skill-faded': true,
-                    'active': this.active
-                }
-            },
+            /**
+             * Calculate the classes for the 
+             * colored container
+             */
             classes() {
                 return {
                     'skill-row': true,
                     'icon': true,
-                    'colored': this.colored,
                     'rounded': this.rounded
                 }
             },
+
+            /**
+             * Set the background for the colored
+             * container
+             */
             styles() {
                 return {
                     background:this.background,
@@ -91,9 +102,6 @@
         flex-direction: column;
         border-radius:15px;
     }
-    .skill-item.active {
-        opacity: 1;
-    }
     .skill-row.icon{
         margin-top: 15px;
         width: 30px;
@@ -124,9 +132,6 @@
         font-size: 2rem;
         font-weight: 600;
     }
-    /*.skill-item.active .skill-row.texted{*/
-        /*color:#fff;*/
-    /*}*/
     @media screen and (max-width: 1024px) {
         .skill-row.texted {
             font-size: 1.5rem;

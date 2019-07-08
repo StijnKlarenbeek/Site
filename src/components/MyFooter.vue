@@ -3,6 +3,7 @@
         <div class="footer-row top-row flex"
              data-aos="fade-up"
              data-aos-duration="750">
+             <!-- Brand name -->
             <div class="left w-50 flex align-center">
                 <div class="wrapper">
                     <img src="@/assets/icon.png">
@@ -11,21 +12,29 @@
                     </h2>
                 </div>
             </div>
+
+            <!-- Footer navigation -->
             <div class="right w-50 flex">
+                <!-- Displays footer navigations for each listitem print a list of links -->
                 <vertical-ul v-for="(item,index) in footerLinks"
                              :key="index"
                             v-bind="item">
+
+                    <!-- Print the list of links -->
                     <li v-for="(linkItem,linkIndex) in item.items" :key="linkIndex">
+                        <!-- Check if a vue router link should be rendered or an anchor tag -->
                         <router-link v-if="typeof(linkItem.link) !== 'undefined' && linkItem.link.length !== 0" :key="linkItem.link" :to="linkItem.link">
                             {{linkItem.nl}} <span v-if="linkItem.new" class="new">NEW</span>
                         </router-link>
                         <a :href="linkItem.webLink" v-else target="_blank" :key="linkItem.webLink">
-                            {{linkItem.nl}}
+                            {{linkItem.nl}} <span v-if="linkItem.new" class="new">NEW</span>
                         </a>
                     </li>
                 </vertical-ul>
             </div>
         </div>
+
+        <!-- Copyright row -->
         <div class="footer-row"
              data-aos="fade-up"
              data-aos-delay="150"
@@ -84,6 +93,11 @@
                 {
                     title: 'SOCIALS',
                     items: [
+                        {
+                            nl: 'Github',
+                            en: 'Github',
+                            webLink: 'https://github.com/StijnKlarenbeek',
+                        },
                         {
                             nl: 'LinkedIn' ,
                             en: 'LinkedIn',

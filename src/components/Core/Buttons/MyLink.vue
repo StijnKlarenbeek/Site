@@ -8,6 +8,9 @@
     export default {
         name: "MyLink",
         props: {
+            /**
+             * The redirect url within the website itself.
+             */
             to: {
                 type: String,
                 required: true
@@ -19,7 +22,6 @@
 <style scoped>
     a {
         color: #68FFD1;
-        /*color: #F5BA78;*/
         font-weight: bolder;
         font-size: 1.5rem;
         text-decoration: none;

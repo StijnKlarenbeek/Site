@@ -1,10 +1,14 @@
 <template>
     <div class="dropdown-menu">
+        <!-- Dropdown menu button-->
         <button @click="toggleDropDown">
             <slot></slot>
         </button>
+
+        <!-- The dropdown menu links will come here -->
         <transition name="slide-fade">
             <div v-if="opened" class="dropdown-wrapper">
+                <!-- Arrow svg -->
                 <svg class="arrow" 
                     xmlns="http://www.w3.org/2000/svg" 
                     width="48" 
@@ -14,6 +18,8 @@
                     transform="rotate(180)">
                     <path d="M28.8 8.00002C33.8925 2.87765 40.7987 0 48 0H0C7.20132 0 14.1075 2.87765 19.2 8.00002C21.8511 10.6667 26.1489 10.6667 28.8 8.00002Z"/>
                 </svg>
+
+                <!-- Menu links -->
                 <ul>
                     <slot name="dropdown"></slot>
                 </ul>
@@ -27,10 +33,15 @@
         name: 'Dropdown',
         data() {
             return {
+                // We cant mutate a prop directly so we load it into local data
                 opened: this.open
             }
         },
         props: {
+            /**
+             * Open is a boolean that be set to true or false
+             * to open the dropdown by default
+             */
             open: {
                 type: Boolean,
                 default: false
@@ -95,13 +106,10 @@
         transition: all .3s ease;
     }
     .slide-fade-leave-active {
-        /* top:30px; */
         transition: all .3s;
     }
-    .slide-fade-enter, .slide-fade-leave-to
-        /* .slide-fade-leave-active below version 2.1.8 */ {
+    .slide-fade-enter, .slide-fade-leave-to {
         top:50px;
-        /* right:10px; */
         opacity: 0;
     }
 </style>
