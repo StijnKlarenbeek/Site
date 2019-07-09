@@ -1,5 +1,9 @@
 <template>
-    <div class="dropdown-menu">
+    <div
+        v-click-outside="{
+            evHandler: ['hideDropDown']
+        }"
+     class="dropdown-menu">
         <!-- Dropdown menu button-->
         <button @click="toggleDropDown">
             <slot></slot>
@@ -50,6 +54,9 @@
         methods: {
             toggleDropDown(){
                 this.opened = !this.opened
+            },
+            hideDropDown() {
+                this.opened = false;
             }
         }
     }

@@ -11,7 +11,8 @@ module.exports = {
         sidebar : {
             '/docs/': [
                 '',
-                'Core'
+                'Core',
+                'Directives',
             ]
         }
     },

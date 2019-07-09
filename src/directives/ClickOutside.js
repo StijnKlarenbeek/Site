@@ -20,20 +20,23 @@ export default {
 
             // We need to check if an excluded element has been targeted
             let clickedOnExcludedElement = false;
-            excluded.forEach(excluded => {
-                // First check if an excluded element has already been checked (no need to make something true TWICE.
-                if (!clickedOnExcludedElement) {
-                    /**
-                     * To get the context in a vue directive we need to use vnode.context since the "this" object
-                     * has been removed from directives somewhere in Vue 2.X.
-                     * @type {*|Vue|Element|Vue[]|Element[]}
-                     */
-                    const excludedEl = vnode.context.$refs[excluded];
+            if(typeof exluced !== 'undefined'){
+               
+                excluded.forEach(excluded => {
+                    // First check if an excluded element has already been checked (no need to make something true TWICE.
+                    if (!clickedOnExcludedElement) {
+                        /**
+                         * To get the context in a vue directive we need to use vnode.context since the "this" object
+                         * has been removed from directives somewhere in Vue 2.X.
+                         * @type {*|Vue|Element|Vue[]|Element[]}
+                         */
+                        const excludedEl = vnode.context.$refs[excluded];
 
-                    // We use .contains to check if the event target is our excluded element.
-                    clickedOnExcludedElement = excludedEl.$el.contains(event.target);
-                }
-            });
+                        // We use .contains to check if the event target is our excluded element.
+                        clickedOnExcludedElement = excludedEl.$el.contains(event.target);
+                    }
+                }); 
+            }
 
             /**
              * Check if there is being clicked inside the element or on an excluded element, if not then handle
