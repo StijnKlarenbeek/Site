@@ -170,8 +170,6 @@
     .pagination-item button:hover, .pagination-item button.active {
         background: #68FFD1;
         border-color:#68FFD1;
-        /*background: #F5BA78;*/
-        /*border-color: #F5BA78;*/
         color:#3C4240;
     }
 </style>

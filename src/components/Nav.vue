@@ -24,13 +24,13 @@
                 Projects
             </router-link>
             <dropdown-menu>
-                CV
+                Resume
                 <template v-slot:dropdown>
                     <li>
-                        <a target="_blank" href="/img/cv/CV.png">View image</a>
+                        <a target="_blank" href="/img/cv/CV Dutch.pdf">Dutch resume</a>
                     </li>
                     <li>
-                        <a target="_blank" href="/img/cv/CV.pdf">Download PDF</a>
+                        <a target="_blank" href="/img/cv/CV English.pdf">English resume</a>
                     </li>
                 </template>
             </dropdown-menu>
