@@ -55,27 +55,22 @@
             year: new Date().getFullYear(),
             footerLinks: [
                 {
-                    title: 'ME',
+                    title: 'SITEMAP',
                     items: [
                         {
-                            nl: 'Wie ben ik',
-                            en: 'Who am I',
-                            link: '/#whoami'
+                            nl: 'Home',
+                            en: 'Home',
+                            link: '/'
                         },
                         {
-                            nl: 'Scholing',
-                            en: 'Training',
-                            link: '/#training'
+                            nl: 'Projects',
+                            en: 'Projects',
+                            link: '/projects'
                         },
                         {
-                            nl: 'Werkervaring',
-                            en: 'Work experience',
-                            link: '/#workexperience'
-                        },
-                        {
-                            nl: 'Vaardigheden',
-                            en: 'Skills',
-                            link: '/#skills'
+                            nl: 'Resume',
+                            en: 'Resume',
+                            link: '/onlinecv'
                         }
                     ],
                 },
