@@ -30,11 +30,19 @@ export default new Router({
       component: () => import('@/views/projects/SaveMe.vue')
     },
 
+    // License
     {
       path: '/license',
       name: 'license',
       component: () => import('@/views/License.vue')
     },
+    {
+      path: '/onlinecv',
+      name: 'onlinecv',
+      component: () => import('@/views/OnlineCv.vue')
+    },
+    
+    // Rest of the pages are not found
     {
       path: '*',
       name: '404',

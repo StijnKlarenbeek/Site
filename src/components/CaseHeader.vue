@@ -104,9 +104,11 @@ export default {
     header .outer{
         width:50%;
         position:relative;
+        box-sizing: border-box;
         z-index:5;
     }
 
+    /**Go back button**/
     header .outer .go-back-btn{
         color:#9F9F9F;
         font-size: 1.2rem;
@@ -143,17 +145,12 @@ export default {
         width:50%;
     }
 
-    /***
-    LEFT
-    ***/
+    /**Inner left container**/
     header .outer .inner .left{
         height: 100%;
         display:flex;
         flex-direction: column;
-        padding-left: 48px;
-        padding-right: 48px;
-        padding-top: 24px;
-        padding-bottom: 24px;
+        padding:24px 48px;
         box-sizing:border-box;
     }
 
@@ -214,11 +211,7 @@ export default {
         margin-left: 0.5rem;
     }
 
-
-
-    /***
-    RIGHT
-    ***/
+    /**Image on the RIGHT side of the inner container**/
     header .outer .inner .right img{
         height: 650px;
         width:100%;
@@ -226,4 +219,97 @@ export default {
         border-bottom-left-radius: 5px;
     }
 
+    @media screen and (min-width: 1500px) and (max-width:1920px) {
+        header .outer{
+            width:60%;
+        }
+    }
+    @media screen and (min-width:1280px) and (max-width: 1499px) {
+        header .outer{
+            width:70%;
+        }
+    }
+
+    /**
+    * Reset the padding to smaller padding on the content container
+    */
+    @media screen and (min-width:0px) and (max-width: 1279px) {
+        /**Left inner container**/
+        header .outer .inner .left{
+            padding: 12px 24px;
+        }
+    }
+    @media screen and (min-width:882px) and (max-width: 1279px) {
+        /**Outer container (with back button)**/
+        header .outer{
+            width:100%;
+            padding: 0 48px;
+        }
+    }
+    @media screen and (min-width: 680px) and (max-width:881px){
+        /**Outer container (with back button)**/
+        header .outer{
+            width:80%;
+            padding: 0 48px;
+        }
+    }
+    @media screen and (min-width: 0px) and (max-width:679px){
+        /**Outer container (with back button)**/
+        header .outer{
+            width:100%;
+            padding: 0 48px;
+        }
+    }
+
+
+    /**Ipad and mobile styling**/
+    @media screen and (min-width: 0px) and (max-width:881px){
+        /**Inner container(without back button)**/
+        header .outer .inner{
+            flex-wrap:wrap;
+            height: 350px;
+            position: relative;
+        }
+
+        /**Change positioning to stack the containers and have them take up the full width**/
+        header .outer .inner .left, header .outer .inner .right{
+            width:100%;
+            position:absolute;
+            left:0;
+            top:0;
+        }
+
+        /**Left container (content)**/
+        header .outer .inner .left {
+            z-index: 4;
+            height:100%;   
+            background: rgba(0,0,0,.80);
+        }
+
+        /**Right container (img)**/
+        header .outer .inner .right{
+            z-index: 3;
+        }
+
+        /**Image on the RIGHT side of the inner container**/
+        header .outer .inner .right img{
+            object-fit: cover;
+            height:350px;
+        }
+    }
+
+    /**Text sizing ipad**/
+    @media screen and (min-width:500px) and (max-width:881px) {
+
+        header .outer .inner .left h1{
+            font-size: 2rem;
+        }
+        header .outer .inner .left h2{
+            font-size: 1.75rem;
+            position: absolute;
+            right:24px;
+            top:12px;
+        }
+    }
+    
 </style>

@@ -100,7 +100,7 @@
             width: 60% !important;
         }
     }
-    @media screen and (max-width: 468px) {
+    @media screen and (max-width: 500px) {
         .skill {
             width: 100% !important;
         }

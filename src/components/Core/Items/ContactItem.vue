@@ -102,7 +102,7 @@
             padding-bottom: 8px;
         }
     }
-    @media screen and (max-width:468px) {
+    @media screen and (max-width:500px) {
         .skill {
             width: 100%;
         }

@@ -32,6 +32,9 @@
                     <li>
                         <a target="_blank" href="/img/cv/CV English.pdf">English resume</a>
                     </li>
+                    <li>
+                        <router-link to="/onlinecv">Online resume</router-link>
+                    </li>
                 </template>
             </dropdown-menu>
             <!--<router-link ref="dutch" to="/" @click="switchLanguage('dutch','uk')">-->
@@ -68,6 +71,13 @@
         },
         components: {
             DropdownMenu
+        },
+        beforeRouteLeave (to, from, next) {
+            alert('ho');
+            // called when the route that renders this component is about to
+            // be navigated away from.
+            // has access to `this` component instance.
+            this.switchNavActive();
         }
     }
 </script>
@@ -228,7 +238,7 @@
         }
     }
 
-    @media screen and (min-width: 469px) {
+    @media screen and (min-width: 501px) {
         span.all-except-phone {
             display: inline;
         }
@@ -236,7 +246,7 @@
             display: none;
         }
     }
-    @media screen and (max-width: 468px) {
+    @media screen and (max-width: 500px) {
         span.all-except-phone {
             display: none;
         }

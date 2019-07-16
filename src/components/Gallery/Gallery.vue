@@ -1,27 +1,29 @@
 <template>
     <div class="gallery">
-        <ul>
+        <ul ref="galleryul">
+            <li class="filter" @click="switchFilterVisibility">
+                Filter
+            </li>
             <li v-for="(filter,index) in filters" :key="index" @click="filterItems(filter)"
             :class="{'active': filtered.indexOf(filter)> -1} ">
                 {{filter}}
             </li>
         </ul>
         <div class="gallery-content">
-                <router-link :to="item.link"
-                             class="gallery-item"
-                             v-for="item in items"
-                             :key="item.title + item.link">
-                    <div class="inner">
-                        <img :src="item.img" :alt="item.alt">
-                        <span class="title" v-if="typeof item.title !== 'undefined'">
-                            {{item.title}}
-                         </span>
-                        <span :class="'filter ' + item.filter">
-                            {{item.filter}}
+            <router-link :to="item.link"
+                            class="gallery-item"
+                            v-for="item in items"
+                            :key="item.title + item.link">
+                <div class="inner">
+                    <img :src="item.img" :alt="item.alt">
+                    <span class="title" v-if="typeof item.title !== 'undefined'">
+                        {{item.title}}
                         </span>
-                    </div>
-
-                </router-link>
+                    <span :class="'filter ' + item.filter">
+                        {{item.filter}}
+                    </span>
+                </div>
+            </router-link>
         </div>
     </div>
 </template>
@@ -71,18 +73,21 @@
                     }
                 }
 
+            }, 
+            switchFilterVisibility(){
+                let els = this.$refs.galleryul.children;
+
+                /**
+                 * The array is an objefct like rray so we prototype this
+                 */
+                Array.prototype.forEach.call(els, el => {
+                    if(!el.classList.contains('filter')) {
+                        el.classList.toggle('visible');
+                    }
+                });
             }
         },
         computed: {
-            // rows() {
-            //     let leftOver = this.items.length % this.itemsPerRow;
-            //     let addExtra = 0;
-            //     if(leftOver > 0) {
-            //         addExtra = 1;
-            //     }
-            //
-            //     return ~~(this.items.length / this.itemsPerRow) +addExtra;
-            // },
             visibleItems() {
                 return this.items.filter((item) => {
                     return this.filtered.indexOf(item.filter) > -1
@@ -105,6 +110,7 @@
         position: sticky;
         top: 66px; /* required */
     }
+
     .gallery ul li{
         color: #ADADAD;
         font-weight: bolder;
@@ -114,9 +120,11 @@
         transition: 300ms;
         cursor: pointer;
     }
+
     .gallery ul li:hover{
         color: #fff;
     }
+
     .gallery ul li.active{
         color: #fff;
         padding: 4px 16px;
@@ -124,6 +132,10 @@
         border-radius:3px;
         transition: 300ms;
     }
+    .gallery ul li.filter{
+        display:none;
+    }
+
     .gallery-content {
         width: 100%;
         height:auto;
@@ -212,10 +224,45 @@
             width: 50%;
         }
     }
-    @media screen and (max-width:768px) {
+    @media screen and (min-width:667px) and (max-width:768px) {
         .gallery ul{
             top: 70px;
             width:100%;
+        }
+        .gallery ul li{
+            margin-left: 24px;
+            margin-right:  24px;
+        }
+    }
+    @media screen and (min-width: 578px) and (max-width:667px) {
+        .gallery ul{
+            margin-top: 32px;
+        }
+        .gallery ul li{
+            margin-left: 24px;
+            margin-right:  24px;
+            font-size: 1.2rem;
+        }
+    }
+    @media screen and (max-width: 577px) {
+        .gallery ul{
+            flex-wrap:wrap;
+            height: auto;
+        }
+        .gallery ul li{
+            display:none;
+            padding-left: 16px;
+            width:100%;
+            font-size: 1.2rem;
+            padding-top: 8px;
+            padding-bottom: 8px;
+        }
+        .gallery ul li.filter{
+            display:block;
+            width:100%;
+        }
+        .gallery ul li.visible{
+            display:block;
         }
     }
 </style>
