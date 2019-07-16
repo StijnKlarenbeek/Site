@@ -3,26 +3,28 @@
         <div>
             <compartment id="whoami">
                 <template v-slot:title>
-                    01.&nbsp;&nbsp;Wie ben ik
+                    01.&nbsp;&nbsp;Who am i?
                 </template>
                 <p data-aos="fade-up" data-aos-duration="750" data-aos-delay="150">
-                    Mijn naam is <span class="teal">Stijn Klarenbeek</span> en ik ben een
-                    enthusiaste en gemotiveerde software developer
-                    en UI designer. Ik ben altijd op zoek naar
-                    nieuwe ideeën en ontwerpen.
+                    My name is <span class="teal">Stijn Klarenbeek</span> and I am an enthusiastic and motivated software developer. 
+                    I am always looking for new ideas and designs and I'm always working to get better.
                 </p>
             </compartment>
+
+            <!-- Education -->
             <compartment id="training">
                 <template v-slot:title>
-                    02. Scholing
+                    02. Education
                 </template>
                 <ExperienceItem v-for="(school,index) in scholing"
                                 :key="index"
                                 v-bind="school"/>
             </compartment>
+
+            <!-- workexperience -->
             <compartment id="workexperience">
                 <template v-slot:title>
-                    03. Werkervaring
+                    03. Workexperience
                 </template>
                 <ExperienceItem v-for="(work,index) in paginatedWork(work.pagination.currentPage)"
                                 :key="index"
@@ -33,9 +35,11 @@
                             :current-page="work.pagination.currentPage"
                             v-model="work.pagination.currentPage"></pagination>
             </compartment>
+
+            <!-- Skills -->
             <compartment id="skills">
                 <template v-slot:title>
-                    04. Vaardigheden
+                    04. Skills
                 </template>
                 <div class="row">
                     <div class="column-100">
@@ -49,7 +53,7 @@
             </compartment>
             <compartment id="contact">
                 <template v-slot:title>
-                    05. Contact informatie
+                    05. Get in touch
                 </template>
                 <div class="row break-phone">
                     <div class="column-50 phone-col-100"

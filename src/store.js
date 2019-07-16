@@ -7,9 +7,9 @@ export default new Vuex.Store({
     state: {
         scholing: [
             {
-                title: 'ICT - INF',
+                title: 'Software engineering',
                 date: 'Sep 2015 - Jul 2019',
-                location: 'Hogeschool het Saxion, Enschede',
+                location: 'Saxion university of applied sciences, Enschede',
                 animation: 'fade-up',
                 animationDelay: '150',
                 animationDuration: '750',
@@ -20,7 +20,7 @@ export default new Vuex.Store({
             {
                 title: 'Havo/VWO',
                 date: 'Sep 2011 - Jul 2015',
-                location: 'De Waerdenborch, Holten',
+                location: 'The Waerdenborch, Holten',
                 animation: 'fade-up',
                 animationDelay: '300',
                 animationDuration: '750',
@@ -35,9 +35,9 @@ export default new Vuex.Store({
             },
             items: [
                 {
-                    title: 'Afstudeerstage',
-                    date: 'Feb 2019 - heden',
-                    'location': 'Mobina IT, Enschede',
+                    title: 'Software engineer',
+                    date: 'May 2018 - now',
+                    location: 'ISV Software B.V., Enschede',
                     animation: 'fade-up',
                     animationDelay: '150',
                     animationDuration: '750',
@@ -47,9 +47,9 @@ export default new Vuex.Store({
                     }
                 },
                 {
-                    title: 'JR. Software engineer',
-                    date: 'Mei 2018 - heden',
-                    location: 'ISV Software B.V., Enschede',
+                    title: 'Graduation research',
+                    date: 'Feb 2019 - heden',
+                    location: 'Mobina IT, Enschede',
                     animation: 'fade-up',
                     animationDelay: '300',
                     animationDuration: '750',
@@ -58,7 +58,7 @@ export default new Vuex.Store({
                     }
                 },
                 {
-                    title: 'Co Founder',
+                    title: 'Co-founder',
                     date: 'Dec 2016 - Sep 2018',
                     location: 'Suprentive, Enschede',
                     animation: 'fade-up',
@@ -69,7 +69,7 @@ export default new Vuex.Store({
                     }
                 },
                 {
-                    title: 'Stagiair',
+                    title: 'Software Intern',
                     date: 'Sep 2017 - Jan 2018',
                     location: 'Sigmax Law Enforcement, Enschede',
                     animation: 'fade-up',
@@ -81,7 +81,7 @@ export default new Vuex.Store({
                     }
                 },
                 {
-                    title: 'Keukenmedewerker',
+                    title: 'Kitchen assistant',
                     date: 'Mrt 2015 - Dec 2017',
                     location: 'Erve Brooks, Gelselaar',
                     animation: 'fade-up',
@@ -92,9 +92,9 @@ export default new Vuex.Store({
                     }
                 },
                 {
-                    title: 'Inpakker/Magazijn',
+                    title: 'Stocker / Warehousing',
                     date: 'Apr 2013 - Mrt. 2015',
-                    location: 'De Jumbo, Goor',
+                    location: 'Jumbo, Goor',
                     animation: 'fade-up',
                     animationDelay: '450',
                     animationDuration: '750',
@@ -207,23 +207,23 @@ export default new Vuex.Store({
             },
             items: [
                 {
-                    title: 'Geslacht',
+                    title: 'Gender',
                     info: 'Man'
                 },
                 {
-                    title: 'Naam',
+                    title: 'Name',
                     info: 'Stijn Klarenbeek'
                 },
                 {
-                    title: 'Adres',
+                    title: 'Address',
                     info: 'Merelstraat 75, 7471GB Goor'
                 },
                 {
-                    title: 'Geboortedatum',
+                    title: 'Birthdate',
                     info: '6 Maart 1998',
                 },
                 {
-                    title: 'Telefoonnummer',
+                    title: 'Phone number',
                     info: '+31(6)11333548',
                 },
                 {
