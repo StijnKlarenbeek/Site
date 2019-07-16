@@ -54,9 +54,11 @@
         methods: {
             toggleDropDown(){
                 this.opened = !this.opened
+                this.$emit('input', this.opened);
             },
             hideDropDown() {
                 this.opened = false;
+                this.$emit('input', this.opened);
             }
         }
     }

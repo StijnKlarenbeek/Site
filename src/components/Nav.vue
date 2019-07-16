@@ -23,7 +23,7 @@
             <router-link to="/projects">
                 Projects
             </router-link>
-            <dropdown-menu>
+            <dropdown-menu ref="dropdown" v-model="resumeNavOpen">
                 Resume
                 <template v-slot:dropdown>
                     <li>
@@ -37,12 +37,6 @@
                     </li>
                 </template>
             </dropdown-menu>
-            <!--<router-link ref="dutch" to="/" @click="switchLanguage('dutch','uk')">-->
-                <!--<img src="/img/dutchflag.svg" alt="">-->
-            <!--</router-link>-->
-            <!--<router-link ref="uk" to="/about" @click="switchLanguage('uk','dutch')">-->
-                <!--<img src="/img/ukflag.png" alt="">-->
-            <!--</router-link>-->
         </div>
     </div>
 </template>
@@ -57,7 +51,8 @@
             languages: [
                 'dutch',
                 'uk'
-            ]
+            ],
+            resumeNavOpen: false
         }),
         methods: {
             switchLanguage(activated, deactivated) {
@@ -72,12 +67,15 @@
         components: {
             DropdownMenu
         },
-        beforeRouteLeave (to, from, next) {
-            alert('ho');
-            // called when the route that renders this component is about to
-            // be navigated away from.
-            // has access to `this` component instance.
-            this.switchNavActive();
+        watch: {
+            '$route' (to, from) {
+
+                if(this.resumeNavOpen) {
+                    this.$refs.dropdown.hideDropDown();
+                    // document.getElementsByClassName('navburgerbars')[0].classList.toggle('active');
+                    // document.getElementById("nav").classList.toggle('active');
+                }
+            }
         }
     }
 </script>
