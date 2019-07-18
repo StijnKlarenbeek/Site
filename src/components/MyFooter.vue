@@ -197,6 +197,7 @@
     @media screen and (max-width: 500px) {
         footer {
             padding: 32px 24px;
+            padding-bottom: 96px;
         }
     }
 </style>

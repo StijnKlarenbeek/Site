@@ -32,7 +32,7 @@
                     </cont-header>
                     <big-text data-aos="fade-right"
                               data-aos-duration="750"
-                              class="mt-2">
+                              class="mt-24">
                         This great tool lets you monitor, plan and keep track of your students performance without any hasle.
                     </big-text>
                     <!--<my-link data-aos="fade-right"-->
@@ -89,7 +89,7 @@
                         title: 'Save me',
                         filter: 'Design concept',
                         link: '/projects/saveme',
-                        img: '/img/assets/Savemegalleryexport.png'
+                        img: '/img/assets/projects/saveme/Savemegalleryexport.png'
                     }
                 ]
             },
@@ -163,9 +163,6 @@
         line-height: 3.75rem;
     }
 
-    .mt-2{
-        margin-top: 24px;
-    }
 
     @media screen and (max-width: 1280px) {
         .hero{

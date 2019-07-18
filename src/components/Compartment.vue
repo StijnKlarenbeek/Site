@@ -38,17 +38,19 @@
     div.section {
         padding-left: 48px;
         padding-right: 48px;
-        /*height: 100vh;*/
         padding-bottom: 96px;
     }
     .padder{
         padding-top: 96px;
     }
+
+    /**Text styling**/
     h2{
         font-size: 3rem;
         line-height: 3rem;
         color: #595959;
     }
+
     h1 {
         font-size:5rem;
         color:#595959;
@@ -57,6 +59,8 @@
             color: #fff;
         }
     }
+    
+    /**Paragraph**/
     p {
         padding: 0;
         margin: 0;
@@ -95,12 +99,24 @@
         .padder {
             padding-top: 64px;
         }
+
+        /**Text styling**/
         h1 {
             font-size: 3rem;
         }
         p {
             font-size: 1.5rem;
             width: 60%;
+        }
+    }
+    @media screen and (max-width: 882px) {
+        /**Paragraph**/
+        p{
+            &.listparagraph {
+                width:100%;
+                font-size: 1.5rem;
+                border-width:3px;
+            }
         }
     }
     @media screen and (max-width: 500px) {
@@ -111,8 +127,14 @@
         h1{
             font-size: 2.5rem;
         }
+        /**Paragraph**/
         p {
             width:100%;
+
+            &.listparagraph {
+                font-size: 1.25rem;
+                border-width:2px;
+            }
         }
     }
 </style>

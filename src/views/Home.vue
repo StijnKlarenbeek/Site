@@ -28,7 +28,7 @@
             <template v-slot:left>
                 <img data-aos="zoom-in"
                      data-aos-duration="750"
-                     src="/img/work/workplanstudent.png" alt="">
+                     src="/img/assets/projects/saveme/SplitContainerView.png" alt="">
             </template>
             <template v-slot:right>
                 <div class="wrapper">
@@ -42,12 +42,12 @@
                     </cont-header>
                     <big-text data-aos="fade-right"
                               data-aos-duration="750"
-                              class="mt-2">
+                              class="mt-8">
                         This great tool lets you monitor, plan and keep track of your students performance without any hasle.
                     </big-text>
                     <my-link data-aos="fade-right"
                              data-aos-duration="750"
-                             class="mt-2"
+                             class="mt-8"
                              to="/projects/saveme">
                         check it out
                     </my-link>

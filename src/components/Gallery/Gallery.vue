@@ -10,15 +10,22 @@
             </li>
         </ul>
         <div class="gallery-content">
+            <!-- The container for each gallery item-->
             <router-link :to="item.link"
                             class="gallery-item"
                             v-for="item in items"
                             :key="item.title + item.link">
+                <!-- Inner -->
                 <div class="inner">
+                    <!-- Gallery's image-->
                     <img :src="item.img" :alt="item.alt">
+                    
+                    <!-- Gallery title-->
                     <span class="title" v-if="typeof item.title !== 'undefined'">
                         {{item.title}}
-                        </span>
+                    </span>
+
+                    <!-- Gallery itemtype -->
                     <span :class="'filter ' + item.filter">
                         {{item.filter}}
                     </span>
@@ -109,6 +116,7 @@
         position: -webkit-sticky;
         position: sticky;
         top: 66px; /* required */
+        list-style:none;
     }
 
     .gallery ul li{
@@ -263,6 +271,10 @@
         }
         .gallery ul li.visible{
             display:block;
+        }
+
+        .gallery-content .gallery-item .inner{
+            width:85%;
         }
     }
 </style>
