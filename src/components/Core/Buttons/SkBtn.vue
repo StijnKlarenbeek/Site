@@ -1,6 +1,7 @@
 <template>
     <a v-if="typeof to === 'undefined'" 
        key="normallink" 
+       :target="target"
        :href="href"
        :class="colorize">
         <slot></slot>
@@ -30,7 +31,8 @@ export default {
         colorize() {
             return {
                 btn: true,
-                'teal': this.color === 'teal'
+                'teal': this.color === 'teal',
+                'primary': this.color === 'primary',
             }
         }
     }
@@ -74,5 +76,15 @@ export default {
     .btn.teal:hover{
         background:transparent;
         color:#68FFD1;
+    }
+
+    .btn.primary{
+        background: #5100FF;
+        border-color:#5100FF;
+        color: #fff;
+    }
+    .btn.primary:hover{
+        background:transparent;
+        color: #5100ff;
     }
 </style>

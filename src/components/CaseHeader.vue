@@ -18,12 +18,12 @@
                         <button class="view-case-btn">
                             <i class="fas fa-long-arrow-alt-down"></i> VIEW CASE
                         </button>
-                        or
-                        <a href="/" target="_blank" 
-                            class="download-btn">
+                        <span>or</span>
+
+                        <sk-btn href="/" target="_blank" color="primary" class="download-btn">
                             DOWNLOAD 
                             <i class="fas fa-long-arrow-alt-right"></i>  
-                        </a>
+                        </sk-btn>
                     </div>
                 </div>
                 <div class="right">
@@ -39,20 +39,38 @@
 </template>
 
 <script>
+
+    import SkBtn from '@/components/Core/Buttons/SkBtn';
+
 export default {
     props: {
+        /**
+         * Head title
+         */
         title: {
             type: String,
             required: true
         },
+
+        /**
+         * What type of project is it e.q.: Design concept, web template etc...
+         */
         type: {
             type: String,
             required: true
         },
+
+        /**
+         * The image on the right sidfe
+         */
         img: {
             type: String,
             required: true
         },
+
+        /**
+         * The alt for when the image doesn't load
+         */
         imgalt: {
             type: String,
             required: true
@@ -69,6 +87,9 @@ export default {
                 'design' : this.type === 'Design Concept'
             }
         }
+    },
+    components: {
+        SkBtn
     }
 }
 </script>
@@ -91,6 +112,8 @@ export default {
         justify-content: center;
         align-items: center;
     }
+
+    /**The header image**/
     .headimg{
         position:absolute;
         top:0%;
@@ -184,7 +207,7 @@ export default {
         font-size: 1.2rem;
     }
 
-    /** View case btn**/
+    /**View case btn**/
     header .outer .inner .left .btn-case-row .view-case-btn{
         font-size: 1.2rem;
         margin-right: .75rem;
@@ -194,21 +217,9 @@ export default {
         margin-right: 0.3rem;
     }
 
-    /**Download files btn**/
+    /**Download btn**/
     header .outer .inner .left .btn-case-row .download-btn{
-        background:#5100FF;
-        color:white;
-        text-decoration:none;
-        padding-left: 1rem;
-        padding-right: 1rem;
-        padding-top: .5rem;
-        padding-bottom: .5rem;
-        font-size: 1.3rem;
-        margin-left: .75rem;
-    }
-    header .outer .inner .left .btn-case-row .download-btn i{
-        display:inline-block;
-        margin-left: 0.5rem;
+        margin-left: 16px;
     }
 
     /**Image on the RIGHT side of the inner container**/
@@ -277,6 +288,7 @@ export default {
             position:absolute;
             left:0;
             top:0;
+            border-radius:8px;
         }
 
         /**Left container (content)**/
@@ -295,6 +307,7 @@ export default {
         header .outer .inner .right img{
             object-fit: cover;
             height:350px;
+            border-radius:10px;
         }
     }
 
@@ -312,4 +325,57 @@ export default {
         }
     }
     
+    @media screen and (max-width: 500px){
+        /**Inner container(without back button)**/
+        header .outer .inner{
+            height: 500px;
+        }
+        
+        /**Set the radius good**/
+        header .outer .inner .left, header .outer .inner .right{
+            border-radius:8px;
+        }
+
+        /**Text styling for phones**/
+        header .outer .inner .left h1{
+            font-size: 2rem;
+        }
+        header .outer .inner .left h2{
+            font-size: 1.5rem;
+        }
+        header .outer .inner .left p{
+            font-size: 1.25rem;
+        }
+
+        /**Btn row (view case or download files)**/
+        header .outer .inner .left .btn-case-row{
+            display:flex;
+            justify-content: flex-start;
+            align-items: flex-start;
+            flex-direction: column;
+            margin-bottom: 0;
+        }
+
+        /**View case btn**/
+        header .outer .inner .left .btn-case-row .view-case-btn{
+            margin-top: 8px;
+            order:3;
+        }
+        header .outer .inner .left .btn-case-row span{
+            order:2;
+        }
+
+        /**Download btn**/
+        header .outer .inner .left .btn-case-row .download-btn{
+            margin-bottom: 8px;
+            margin-left: 0;
+            order:1;
+        }
+
+        /**Image on the RIGHT side of the inner container**/
+        header .outer .inner .right img{
+            height: 500px;
+            border-radius:10px;
+        }
+    }
 </style>

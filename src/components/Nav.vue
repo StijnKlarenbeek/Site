@@ -72,8 +72,6 @@
 
                 if(this.resumeNavOpen) {
                     this.$refs.dropdown.hideDropDown();
-                    // document.getElementsByClassName('navburgerbars')[0].classList.toggle('active');
-                    // document.getElementById("nav").classList.toggle('active');
                 }
             }
         }
