@@ -52,7 +52,8 @@
                 'dutch',
                 'uk'
             ],
-            resumeNavOpen: false
+            resumeNavOpen: false,
+            mobileNavOpen: false
         }),
         methods: {
             switchLanguage(activated, deactivated) {
@@ -62,6 +63,7 @@
             switchNavActive() {
                 document.getElementsByClassName('navburgerbars')[0].classList.toggle('active');
                 document.getElementById("nav").classList.toggle('active');
+                this.mobileNavOpen = !this.mobileNavOpen;
             }
         },
         components: {
@@ -72,6 +74,9 @@
 
                 if(this.resumeNavOpen) {
                     this.$refs.dropdown.hideDropDown();
+                }
+                if(this.mobileNavOpen) {
+                    this.switchNavActive();
                 }
             }
         }
