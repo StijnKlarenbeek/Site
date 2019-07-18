@@ -72,10 +72,11 @@
         }
         &.listparagraph{
             border-left: 5px solid #68FFD1;
-            padding-left: 2rem;
+            padding-left: 1.5rem;
             margin-left: 5px;
             font-size: 1.75rem;
-            color:#ADADAD;
+            font-weight: normal;
+            color: #D0D0D0;
             margin-top: 16px;
         }
     }

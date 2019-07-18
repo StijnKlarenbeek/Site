@@ -24,6 +24,36 @@
                     </sk-btn>
                 </div>
             </compartment>
+            <split-container>
+            <template v-slot:left>
+                <img data-aos="zoom-in"
+                     data-aos-duration="750"
+                     src="/img/work/workplanstudent.png" alt="">
+            </template>
+            <template v-slot:right>
+                <div class="wrapper">
+                    <sup-header data-aos="fade-right"
+                                data-aos-duration="750">
+                        LATEST DROP
+                    </sup-header>
+                    <cont-header data-aos="fade-right"
+                                 data-aos-duration="750">
+                        Save me
+                    </cont-header>
+                    <big-text data-aos="fade-right"
+                              data-aos-duration="750"
+                              class="mt-2">
+                        This great tool lets you monitor, plan and keep track of your students performance without any hasle.
+                    </big-text>
+                    <my-link data-aos="fade-right"
+                             data-aos-duration="750"
+                             class="mt-2"
+                             to="/projects/saveme">
+                        check it out
+                    </my-link>
+                </div>
+            </template>
+        </split-container>
         </div>
 
         <MyFooter/>
@@ -32,10 +62,23 @@
 
 <script>
     import Compartment from '@/components/Compartment';
-    import SkBtn from '@/components/Core/Buttons/SkBtn';
-    import {mapGetters} from 'vuex';
 
+    //Containers
+    import SplitContainer from '@/components/Core/Containers/SplitContainer';
+
+    //Texts
+    import SupHeader from "@/components/Core/Text/SupHeader";
+    import ContHeader from "@/components/Core/Text/ContHeader";
+    import BigText from "@/components/Core/Text/BigText";
+
+    //Btns
+    import SkBtn from '@/components/Core/Buttons/SkBtn';
+    import MyLink from '@/components/Core/Buttons/MyLink';
+
+    //Footer
     import MyFooter from '@/components/MyFooter';
+
+    import {mapGetters} from 'vuex';
 
     export default {
         name: 'home',
@@ -84,8 +127,21 @@
         },
         components: {
             Compartment,
+
+            //Btns
             SkBtn,
-            MyFooter
+            MyLink,
+
+            //Footer
+            MyFooter,
+
+            //Containers
+            SplitContainer,
+
+            //Texts
+            SupHeader,
+            ContHeader,
+            BigText,
         }
     }
 </script>

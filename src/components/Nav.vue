@@ -107,6 +107,7 @@
             box-sizing:border-box;
             margin-right: 16px;
             margin-left: 16px;
+            transition:250ms;
 
             &.brand {
                 opacity: 1;
@@ -120,6 +121,11 @@
             &.router-link-exact-active {
                 opacity: 1;
                 color: rgba(255,255,255,1);
+            }
+
+            &:hover{
+                color: #fff;
+                transition:250ms;
             }
         }
 
@@ -197,6 +203,8 @@
         transition:250ms;
     }
 
+    
+
     @media screen and (min-width: 768px) {
 
         span.all-except-ipad {
@@ -226,6 +234,13 @@
         #nav .right a{
             padding-left: 48px;
             display:block;
+        }
+        #nav .right .dropdown-menu{
+            // background:green;
+            padding-left: 64px;
+            padding-top: 8px;
+            padding-bottom: 8px;
+            // width:100%;  
         }
     
         .burger {

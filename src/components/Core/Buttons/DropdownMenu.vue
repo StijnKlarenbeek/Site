@@ -3,7 +3,7 @@
         v-click-outside="{
             evHandler: ['hideDropDown']
         }"
-     class="dropdown-menu">
+     :class="dropdownClasses">
         <!-- Dropdown menu button-->
         <button @click="toggleDropDown">
             <slot></slot>
@@ -49,6 +49,10 @@
             open: {
                 type: Boolean,
                 default: false
+            },
+            nav: {
+                type: Boolean,
+                default: false
             }
         },
         methods: {
@@ -59,6 +63,14 @@
             hideDropDown() {
                 this.opened = false;
                 this.$emit('input', this.opened);
+            }
+        },
+        computed: {
+            dropdownClasses(){
+                return {
+                    'dropdown-menu' : true,
+                    nav: this.nav
+                }
             }
         }
     }
@@ -120,5 +132,10 @@
     .slide-fade-enter, .slide-fade-leave-to {
         top:50px;
         opacity: 0;
+    }
+
+    /**Dropdown menu nav styles**/
+    @media screen and (max-width:768px){
+        
     }
 </style>

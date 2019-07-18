@@ -95,15 +95,21 @@
             },
         }),
         components: {
+            //Containers
             SplitContainer,
 
+            //Text
             SupHeader,
             ContHeader,
             BigText,
 
+            //Btns
             MyLink,
-
+            
+            //Footer
             MyFooter,
+
+            //Gallery
             Gallery
         }
     }
