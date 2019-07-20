@@ -33,7 +33,7 @@
                         <a target="_blank" href="/img/cv/CV English.pdf">English resume</a>
                     </li>
                     <li>
-                        <router-link to="/onlinecv">Online resume</router-link>
+                        <router-link to="/resume">Online resume</router-link>
                     </li>
                 </template>
             </dropdown-menu>

@@ -3,7 +3,7 @@
         <div>
             <compartment id="whoami">
                 <template v-slot:title>
-                    01.&nbsp;&nbsp;Who am i?
+                    01.&nbsp;&nbsp;Who am I?
                 </template>
                 <p data-aos="fade-up" data-aos-duration="750" data-aos-delay="150">
                     My name is <span class="teal">Stijn Klarenbeek</span> and I am an enthusiastic and motivated software developer. 
@@ -24,7 +24,7 @@
             <!-- workexperience -->
             <compartment id="workexperience">
                 <template v-slot:title>
-                    03. Workexperience
+                    03. Experience
                 </template>
                 <ExperienceItem v-for="(work,index) in paginatedWork(work.pagination.currentPage)"
                                 :key="index"

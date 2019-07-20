@@ -37,7 +37,7 @@ export default new Router({
       component: () => import('@/views/License.vue')
     },
     {
-      path: '/onlinecv',
+      path: '/resume',
       name: 'onlinecv',
       component: () => import('@/views/OnlineCv.vue')
     },

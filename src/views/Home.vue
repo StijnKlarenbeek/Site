@@ -19,7 +19,7 @@
                         PROJECTS <i class="fa fa-long-arrow-alt-right"></i>
                     </sk-btn>
 
-                    <sk-btn to="/onlinecv" color="teal" class="ml32">
+                    <sk-btn to="/resume" color="teal" class="ml32">
                         RESUME <i class="fa fa-long-arrow-alt-right"></i>
                     </sk-btn>
                 </div>

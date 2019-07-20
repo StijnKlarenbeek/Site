@@ -1,63 +1,42 @@
 <template>
     <div class="work">
         <header class="hero">
-            <h1 data-aos="fade-up"
-                data-aos-delay="150"
-                data-aos-duration="750">
-                Designing <br>
-                & Creating
-            </h1>
-            <h2 data-aos="fade-up"
-                data-aos-delay="250"
-                data-aos-duration="750">
-                It is what i do because it is<br>
-                what i love doing with my time.
-            </h2>
         </header>
-        <split-container>
-            <template v-slot:left>
-                <img data-aos="zoom-in"
-                     data-aos-duration="750"
-                     src="/img/work/workplanstudent.png" alt="">
-            </template>
-            <template v-slot:right>
-                <div class="wrapper">
-                    <sup-header data-aos="fade-right"
-                                data-aos-duration="750">
-                        DESIGN CONCEPT
-                    </sup-header>
-                    <cont-header data-aos="fade-right"
-                                 data-aos-duration="750">
-                        Student Monitoring Dashboard
-                    </cont-header>
-                    <big-text data-aos="fade-right"
-                              data-aos-duration="750"
-                              class="mt-24">
-                        This great tool lets you monitor, plan and keep track of your students performance without any hasle.
-                    </big-text>
-                    <!--<my-link data-aos="fade-right"-->
-                             <!--data-aos-duration="750"-->
-                             <!--class="mt-2"-->
-                             <!--to="/work">-->
-                        <!--check it out-->
-                    <!--</my-link>-->
-                </div>
-            </template>
-        </split-container>
+        <div class="hello"
+        style="background:white;">
+
+            <swiper :options="swiperOption" ref="mySwiper">
+                <!-- slides -->
+                <swiper-slide class="swiper-1">
+                    <div class="inner">
+                        HELLOW 1
+                    </div>
+                </swiper-slide>
+                <swiper-slide>
+                    <div class="inner">
+                        HELLOW 2
+                    </div>
+                </swiper-slide>
+                <swiper-slide>
+                    <div class="inner">
+                        HELLOW 3
+                    </div>
+                </swiper-slide>
+                <swiper-slide>
+                    <div class="inner">
+                        HELLOW 4
+                    </div>
+                </swiper-slide>
+                <!-- Optional controls -->
+                <div class="swiper-pagination"  slot="pagination"></div>
+            </swiper>
+
+        </div>
         <div class="gallery">
             <h1>
                 More creations
             </h1>
             <gallery :filters="gallery.filters" :items="gallery.items"></gallery>
-            <!--<div class="gallery-filter-row">-->
-
-            <!--</div>-->
-            <!--<div class="gallery-row">-->-
-                <!--<div class="item">-->
-                    <!--<img src="/img/assets/Savemegalleryexport.png" alt="">-->
-                <!--</div>-->
-                <!--<div class="item"></div>-->
-            <!--</div>-->
         </div>
 
         <MyFooter/>
@@ -93,6 +72,25 @@
                     }
                 ]
             },
+            swiperOption: {
+                loop: true,
+                effect: 'coverflow',
+                grabCursor: false,
+                slidesPerView:'auto',
+                centeredSlides: true,
+                coverflowEffect: {
+                    rotate: 0,
+                    stretch: 0,
+                    depth: 400,
+                    modifier: 1,
+                    slideShadows : false,
+                }, 
+                autoplay: {
+                    delay: 2500,
+                    disableOnInteraction: false,
+                },
+                touchRatio: 0
+            }
         }),
         components: {
             //Containers
@@ -119,8 +117,6 @@
     .work{
         position: relative;
         z-index: 3;
-        /*padding-bottom: 96px;*/
-        /*padding-top: 96px;*/
 
     }
 
@@ -180,5 +176,57 @@
             font-size: 1.75rem;
             line-height: 1.75rem;
         }
+    }
+
+
+
+
+    .swiper-container {
+      width: 100%;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      height: calc(100vh - 66px);
+    }
+    .swiper-slide {
+      background-position: center;
+      background-size: cover;
+      width:70% !important;
+      height: 400px;
+      margin-top:150px;
+        transition:1000ms !important;
+        transition: height 1000ms ease-in-out, margin-top 1000ms ease;
+        /* background:blue; */
+        transform:none !important;
+        /* margin-right: 0 !important; */
+    }
+    .swiper-slide.swiper-slide-active {
+        height: 600px;
+        margin-top: 50px;
+    }
+    .swiper-slide-next,.swiper-slide-prev{
+         /* transform: translate3d(0px, 0px, -661.652px) rotateX(0deg) rotateY(0deg) !important; */
+    }
+    .swiper-slide-next{
+        margin-right: 150px;
+        /* transform: translate3d(0px 150px, 0px) !important; */
+    }
+    
+    .swiper-slide .inner{
+        padding-left: 144px;
+        padding-right: 144px;
+        background:blue;
+        height:100%;
+        width:90%;
+        margin-left: 5%;
+        box-sizing:border-box;
+    }
+    .swiper-1 .inner {
+        background:orange;
+    }
+    .swiper-slide-next .inner{
+        /* margin-left: 15%; */
+    }
+    .swiper-slide-prev .inner{
+        /* margin-left: -5%; */
     }
 </style>

@@ -3,14 +3,20 @@ import App from './App.vue';
 import router from './router';
 import store from './store';
 import './registerServiceWorker';
-// import VueFullPage from 'vue-fullpage.js';
-
 import AOS from 'aos';
 import 'aos/dist/aos.css'; // You can also use <link> for styles
 
 import GlobalComponents from './index';
 
-// Vue.use(VueFullPage);
+/**
+ * Swiper slider
+ */
+import VueAwesomeSwiper from 'vue-awesome-swiper'
+
+// require styles
+import 'swiper/dist/css/swiper.css'
+
+Vue.use(VueAwesomeSwiper, /* { default global options } */)
 
 Vue.config.productionTip = false;
 Vue.use(GlobalComponents);
