@@ -132,6 +132,17 @@ export default {
         color:#fff;
     }
 
+    @media screen and (max-width:570px){
+        .btn {
+            font-size: 1rem;
+        }
+        .btn.btn.tertiary{
+            font-size: 1rem;
+        padding-left: 1.2rem;
+        padding-right: 1.2rem;
+        }
+    }
+
     @media screen and (max-width: 450px){
         .phone-block{
             display:block;

@@ -94,4 +94,35 @@ export default {
         opacity: 1;
         transition:250ms;
     } 
+    @media screen and (min-width:768px) and (max-width:1024px) {
+        .overlay.hero {
+            height: 400px;
+        }
+    }
+    @media screen and (min-width:570px) and (max-width:768px) {
+
+        .overlay.hero {
+            height: 300px;
+        }
+
+        .overlay .content {
+
+            transform: scale(1);
+            visibility: visible;
+            opacity: .8;
+        }
+    }
+    @media screen and (max-width:570px){
+
+        .overlay.hero {
+            height: 200px;
+        }
+
+        .overlay .content {
+
+            transform: scale(1);
+            visibility: visible;
+            opacity: .8;
+        }
+    }
 </style>

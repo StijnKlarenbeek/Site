@@ -23,7 +23,7 @@
                                 PROJECTS <i class="fa fa-long-arrow-alt-right"></i>
                             </sk-btn>
 
-                            <sk-btn to="/resume" color="teal" class="ml32">
+                            <sk-btn to="/resume" color="teal" class="ml32 ml-p-1 mt-p-2">
                                 RESUME <i class="fa fa-long-arrow-alt-right"></i>
                             </sk-btn>
                         </div>
@@ -196,5 +196,15 @@
     .btn-row{
         margin-top: 40px;
     }
-    
+    @media screen and (max-width:570px) {
+        .ml-p-0 {
+            margin-left: 0;
+        }
+        .ml-p-1{
+            margin-left: 16px;
+        }
+        .mt-p-2 {
+            margin-top: 16px;
+        }
+    }
 </style>

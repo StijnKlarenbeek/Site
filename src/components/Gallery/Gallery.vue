@@ -21,14 +21,14 @@
                         {{item.description}}
                     </p>
                     <div class="button-row">
-                        <sk-btn to="/projects/saveme" target="_blank" rounded color="tertiary opacified" phone-block 
+                        <sk-btn to="/projects/saveme" target="_blank" rounded color="tertiary opacified" 
                                 class="ml-2 ml-p-0 mt-p-2">
                             View case 
                         </sk-btn>
 
 
-                        <sk-btn href="/" target="_blank" rounded color="tertiary" phone-block
-                                class="ml-2 ml-p-0 mt-p-2">
+                        <sk-btn href="/" target="_blank" rounded color="tertiary" 
+                                class="ml-2 ml-p-1 mt-p-2">
                             Download 
                         </sk-btn>
 
@@ -304,6 +304,9 @@
     @media screen and (max-width: 450px){
         .ml-p-0{
             margin-left: 0;
+        }
+        .ml-p-1{
+            margin-left: 16px;
         }
         .mt-p-2{
             margin-top: 16px;
