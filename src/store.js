@@ -194,23 +194,15 @@ export default new Vuex.Store({
             items: [
                 {
                     title: 'Gender',
-                    info: 'Man'
+                    info: 'Male'
                 },
                 {
                     title: 'Name',
                     info: 'Stijn Klarenbeek'
                 },
                 {
-                    title: 'Address',
-                    info: 'Merelstraat 75, 7471GB Goor'
-                },
-                {
                     title: 'Birthdate',
                     info: '6 Maart 1998',
-                },
-                {
-                    title: 'Phone number',
-                    info: '+31(6)11333548',
                 },
                 {
                     title: 'E-mail',

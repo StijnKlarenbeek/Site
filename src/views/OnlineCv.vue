@@ -121,10 +121,10 @@
         },
         computed: {
             contactItemsFirstHalf() {
-                return this.contact.items.slice(0, 3);
+                return this.contact.items.slice(0, 2);
             },
             contactItemsSecondHalf() {
-                return this.contact.items.slice(3, 6);
+                return this.contact.items.slice(2, 4);
             },
             ...mapGetters({
                 scholing: 'getScholing',

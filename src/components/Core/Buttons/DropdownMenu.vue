@@ -137,5 +137,23 @@
     /**Dropdown menu nav styles**/
     @media screen and (max-width:768px){
         
+        .dropdown-wrapper{
+            left:64px;
+            right:auto;
+            top:35px;
+        }
+        .dropdown-wrapper .arrow{
+            left: 10px;
+        }
+    }
+    @media screen and (max-width: 500px) {
+
+        .dropdown-wrapper{
+            left:40px;
+            top:35px;
+        }
+        .dropdown-wrapper .arrow{
+            left: 10px;
+        }
     }
 </style>

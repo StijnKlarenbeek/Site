@@ -100,13 +100,11 @@ export default {
         }
     }
     @media screen and (min-width:570px) and (max-width:768px) {
-
         .overlay.hero {
             height: 300px;
         }
 
         .overlay .content {
-
             transform: scale(1);
             visibility: visible;
             opacity: .8;

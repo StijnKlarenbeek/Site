@@ -24,7 +24,7 @@
                 <router-link to="/projects">
                     Projects
                 </router-link>
-                <dropdown-menu ref="dropdown" v-model="resumeNavOpen">
+                <dropdown-menu ref="dropdown" v-model="resumeNavOpen" nav>
                     Resume
                     <template v-slot:dropdown>
                         <li>
@@ -297,6 +297,11 @@
         }
         #nav .right a{
             padding-left: 24px;
+            padding-top: 8px;
+            padding-bottom: 8px;
+        }
+        #nav .right .dropdown-menu{
+            padding-left: 40px;
         }
     }
 </style>
