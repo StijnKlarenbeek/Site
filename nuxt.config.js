@@ -55,6 +55,5 @@ export default {
     */
     extend (config, ctx) {
     },
-    vendor: ["aos"]
   }
 }
