@@ -1,3 +1,22 @@
-# My website
+# mysite
 
-This repository is the repo for my own website. If you see something on my website that looks a bit off and needs some work. Feel free to open an issue :)
+> my website
+
+## Build Setup
+
+``` bash
+# install dependencies
+$ yarn install
+
+# serve with hot reload at localhost:3000
+$ yarn dev
+
+# build for production and launch server
+$ yarn build
+$ yarn start
+
+# generate static project
+$ yarn generate
+```
+
+For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
