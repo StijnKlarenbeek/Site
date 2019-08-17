@@ -1,41 +1,48 @@
 <template>
     <div class="gallery">
-        <ul ref="galleryul">
-            <li class="filter" @click="switchFilterVisibility">
-                Filter
-            </li>
-            <li v-for="(filter,index) in filters" :key="index" @click="filterItems(filter)"
-            :class="{'active': filtered.indexOf(filter)> -1} ">
-                {{filter}}
-            </li>
-        </ul>
-        <div class="gallery-content">
-            <!-- The container for each gallery item-->
-            <router-link :to="item.link"
-                            class="gallery-item"
-                            v-for="item in items"
-                            :key="item.title + item.link">
-                <!-- Inner -->
-                <div class="inner">
-                    <!-- Gallery's image-->
-                    <img :src="item.img" :alt="item.alt">
-                    
-                    <!-- Gallery title-->
-                    <span class="title" v-if="typeof item.title !== 'undefined'">
-                        {{item.title}}
-                    </span>
-
-                    <!-- Gallery itemtype -->
-                    <span :class="'filter ' + item.filter">
-                        {{item.filter}}
-                    </span>
+        <div class="bar"></div>
+        <div class="content">
+            <!-- Loop throguh all the items -->
+            <div class="item" v-for="(item, index) in items" :key="index">
+                <div class="left">
+                    <!-- Image -->
+                    <div class="overlay" :style="getBackground(item)">
+                        <div class="inner">
+                            {{item.price.amount}}
+                        </div>
+                    </div>
                 </div>
-            </router-link>
+                <div class="right">
+                    <div class="header">
+                        <h3>{{item.title}}</h3>
+                        <h5 :style="getTextColor(item.type)">{{item.type}}</h5>
+                    </div>
+                    <p class="text-justify">
+                        {{item.description}}
+                    </p>
+                    <div class="button-row">
+                        <sk-btn to="/projects/saveme" target="_blank" rounded color="tertiary opacified" phone-block 
+                                class="ml-2 ml-p-0 mt-p-2">
+                            View case 
+                        </sk-btn>
+
+
+                        <sk-btn href="/" target="_blank" rounded color="tertiary" phone-block
+                                class="ml-2 ml-p-0 mt-p-2">
+                            Download 
+                        </sk-btn>
+
+                        
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </template>
 
 <script>
+    import SkBtn from '@/components/Core/Buttons/SkBtn';
+
     export default {
         name: "Gallery",
         data: function() {
@@ -44,25 +51,31 @@
             }
         },
         props: {
-            itemsPerRow: {
-                type: Number,
-                default: 3
-            },
-            singleFilter: {
-                type: Boolean,
-                default: true
-            },
-            filters: {
-                type: Array,
-                default: function () {
-                    return ['all']
-                }
-            },
             items: {
                 type: Array
             }
         },
         methods: {
+            getBackground(item) {
+                return {
+                    'background': item.background.gradient + ", url('" + item.background.img + "')",
+                    'background-size': 'cover',
+                    'background-position': 'center center'
+                }
+            },
+            getTextColor(itemType) {
+                let color = "";
+                if(itemType === "Design concept") {
+                    color = "#FFDE94"
+                }
+
+                return {
+                    'color' : color
+                }
+            },
+
+
+
             filterItems(filter) {
                 if(this.singleFilter) {
                     // this.filtered = [];
@@ -100,16 +113,27 @@
                     return this.filtered.indexOf(item.filter) > -1
                 });
             }
+        },
+        components: {
+            SkBtn
         }
     }
 </script>
 
 <style scoped>
-    .gallery ul {
+    /**margin**/
+    .ml-1{
+        margin-left: 8px;
+    }
+    .ml-2{
+        margin-left: 16px;
+    }
+
+    .gallery .bar {
         width: 100%;
         margin-top: 56px;
         background: #151515;
-        height: 80px;
+        height: 60px;
         display:flex;
         justify-content: center;
         align-items: center;
@@ -119,162 +143,182 @@
         list-style:none;
     }
 
-    .gallery ul li{
-        color: #ADADAD;
-        font-weight: bolder;
-        font-size: 1.5rem;
-        margin-left: 32px;
-        margin-right: 32px;
-        transition: 300ms;
-        cursor: pointer;
+    .gallery .content{
+        width: 40%;
+        /* min-height: 800px; */
+        margin-left: 30%;
+        padding-top: 60px;
+        padding-bottom: 120px;
     }
 
-    .gallery ul li:hover{
-        color: #fff;
-    }
-
-    .gallery ul li.active{
-        color: #fff;
-        padding: 4px 16px;
-        background: #5100FF;
-        border-radius:3px;
-        transition: 300ms;
-    }
-    .gallery ul li.filter{
-        display:none;
-    }
-
-    .gallery-content {
-        width: 100%;
-        height:auto;
-        display: flex;
+    /**Main gallery item**/
+    .gallery .content .item {
+        /* height: 300px; */
+        background: #2E2E2E;
+        margin-top: 50px;
+        border-radius:5px;
+        display:flex;
         justify-content: flex-start;
-        align-items: stretch;
-        box-sizing: border-box;
-        flex-wrap:wrap;
-    }
 
-    .gallery-content .gallery-item {
-        width: calc(100% / 3);
-        height: auto;
-        overflow: auto;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        box-sizing: border-box;
-        text-decoration: none;
-        padding-bottom: 56px;
-        padding-top: 56px;
+       -webkit-box-shadow: 0px 10px 49px -9px rgba(255,255,255,.3);
+        -moz-box-shadow: 0px 10px 49px -9px rgba(255,255,255,.3);
+        box-shadow: 0px 10px 49px -9px rgba(255,255,255,.3);
     }
-
-    .gallery-content .gallery-item:hover{
-        background: #151515;
+    .gallery .content .item .left {
+        width:50%;
+        border-bottom-left-radius: 5px;
+        border-top-left-radius:5px;
+        padding-left: 48px;
+        padding-right: 48px;
     }
-
-    .gallery-content .gallery-item .inner{
-        width: 60%;
-        display: flex;
-        align-items: flex-start;
-        flex-direction: column;
-        box-sizing: border-box;
-    }
-
-    .gallery-content .gallery-item .inner img {
+    .gallery .content .item .left .overlay{
         width: 100%;
-        height: auto;
-    }
+        height: 250px;
+        background: #fff;
+        border-radius: 5px;
+        margin-top: -25px;
+        position: relative;
 
-    .gallery-content .gallery-item .inner .title{
-        color:white;
-        font-size: 1.5rem;
-        font-weight: bolder;
+
+        -webkit-box-shadow: 0px 0px 19px 0px rgba(0,0,0,0.25);
+        -moz-box-shadow: 0px 0px 19px 0px rgba(0,0,0,0.25);
+        box-shadow: 0px 0px 19px 0px rgba(0,0,0,0.25);
+    }
+    .gallery .content .item .left .overlay .inner {
+        background: #fff;
         display: inline-block;
-        margin-top: 8px;
+        border-radius:5px;
+        color:#0F203F;
+        padding-left: 24px;
+        padding-right: 24px;
+        padding-top: 12px;
+        padding-bottom: 12px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        
+        position: absolute;
+        top: 50%;
+        left:50%;
+        transform: translate(-50%, -50%);
+
+        -webkit-box-shadow: 0px 0px 19px 0px rgba(0,0,0,0.25);
+        -moz-box-shadow: 0px 0px 19px 0px rgba(0,0,0,0.25);
+        box-shadow: 0px 0px 19px 0px rgba(0,0,0,0.25);
     }
 
-    .gallery-content .gallery-item:hover .inner .title{
-        text-decoration: underline #fff;
+    /**Right content**/
+    .gallery .content .item .right {
+        width:60%;
+        padding-right: 48px;
+        padding-top: 24px;
     }
 
-    .gallery-content .gallery-item .inner .filter{
-        font-size: 1.25rem;
-        font-weight: bolder;
+    .gallery .content .item .right .header{
+        display:flex;
+        color:white;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .gallery .content .item .right .header h3{
+        font-size: 2rem;
+    }
+    .gallery .content .item .right .header h5{
+        font-size: 1.2rem;
     }
 
-    .gallery-content .gallery-item .inner .filter.Web{
-        color: #6DFFBB;
+    .gallery .content .item .right p {
+        text-align: justify;
+        color:#ADADAD;
+        font-size: 1.2rem;
+        margin-top: 16px;
     }
 
-    .gallery-content .gallery-item:hover .inner .filter.Web{
-        text-decoration: underline #6DFFBB;
+    .gallery .content .item .right .button-row {
+        margin-top: 40px;
+        padding-bottom: 48px;
     }
 
-    .gallery-content .gallery-item .inner .filter.Design{
-        color: #FF6D8D;
-        color: #FFBE6D;
-    }
-
-    .gallery-content .gallery-item:hover .inner .filter.Design{
-        text-decoration: underline #FF6D8D;
-        text-decoration: underline #FFBE6D;
-    }
-
-    .gallery-content .gallery-item .inner .filter.Software{
-        color: #746DFF;
-        color: #4353ff;
-    }
-
-    .gallery-content .gallery-item:hover .inner .filter.Software{
-        text-decoration: underline #4353ff;
-    }
-    @media screen and (max-width:1024px) {
-        .gallery-content .gallery-item {
-            width: 50%;
+    @media screen and (min-width: 1500px) and (max-width:1920px) {
+        .gallery .content{
+            width:50%;
+            margin-left: 25%;
         }
     }
-    @media screen and (min-width:667px) and (max-width:768px) {
-        .gallery ul{
-            top: 70px;
-            width:100%;
-        }
-        .gallery ul li{
-            margin-left: 24px;
-            margin-right:  24px;
+    @media screen and (min-width:1280px) and (max-width: 1499px) {
+        .gallery .content{
+            width:60%;
+            margin-left: 20%;
         }
     }
-    @media screen and (min-width: 578px) and (max-width:667px) {
-        .gallery ul{
-            margin-top: 32px;
-        }
-        .gallery ul li{
-            margin-left: 24px;
-            margin-right:  24px;
-            font-size: 1.2rem;
+    @media screen and (min-width:1024px) and (max-width: 1280px) {
+        .gallery .content{
+            width:70%;
+            margin-left: 15%;
         }
     }
-    @media screen and (max-width: 577px) {
-        .gallery ul{
-            flex-wrap:wrap;
-            height: auto;
-        }
-        .gallery ul li{
-            display:none;
-            padding-left: 16px;
-            width:100%;
-            font-size: 1.2rem;
-            padding-top: 8px;
-            padding-bottom: 8px;
-        }
-        .gallery ul li.filter{
-            display:block;
-            width:100%;
-        }
-        .gallery ul li.visible{
-            display:block;
-        }
-
-        .gallery-content .gallery-item .inner{
+    @media screen and (min-width:845px) and (max-width: 1024px) {
+        .gallery .content{
             width:85%;
+            margin-left: 7.5%;
         }
     }
+    @media screen and (min-width:570px) and (max-width: 845px) {
+        .gallery .content{
+            width:80%;
+            margin-left: 10%;
+        }
+        .gallery .content .item {
+            flex-wrap: wrap;
+        }
+
+        .gallery .content .item .left {
+            width:100%;
+        }
+        .gallery .content .item .right {
+            width:100%;
+            padding-left: 48px;
+        }
+    }
+    @media screen and (max-width: 570px) {
+        .gallery .content{
+            width:100%;
+            margin-left:0%;
+            padding-left: 24px;
+            padding-right: 24px;
+        }
+        .gallery .content .item {
+            flex-wrap: wrap;
+        }
+        .gallery .content .item .left {
+            width:100%;
+            padding-left: 24px;
+            padding-right: 24px;
+        }
+        .gallery .content .item .right {
+            width:100%;
+            padding-left: 24px;
+            padding-right: 24px;
+        }
+    }
+
+    @media screen and (max-width: 450px){
+        .ml-p-0{
+            margin-left: 0;
+        }
+        .mt-p-2{
+            margin-top: 16px;
+        }
+        .gallery .content .item .right {
+            padding-top: 16px;
+        }
+        .gallery .content .item .right .header{
+            display:block;
+        }
+
+        .gallery .content .item .right .button-row{
+            margin-top: 24px;
+            padding-bottom: 32px;
+        }
+    }
+
 </style>

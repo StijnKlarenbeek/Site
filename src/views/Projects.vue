@@ -1,41 +1,7 @@
 <template>
     <div class="work">
-        <header class="hero">
-        </header>
-        <div class="hello"
-        style="background:white;">
-
-            <swiper :options="swiperOption" ref="mySwiper">
-                <!-- slides -->
-                <swiper-slide class="swiper-1">
-                    <div class="inner">
-                        HELLOW 1
-                    </div>
-                </swiper-slide>
-                <swiper-slide>
-                    <div class="inner">
-                        HELLOW 2
-                    </div>
-                </swiper-slide>
-                <swiper-slide>
-                    <div class="inner">
-                        HELLOW 3
-                    </div>
-                </swiper-slide>
-                <swiper-slide>
-                    <div class="inner">
-                        HELLOW 4
-                    </div>
-                </swiper-slide>
-                <!-- Optional controls -->
-                <div class="swiper-pagination"  slot="pagination"></div>
-            </swiper>
-
-        </div>
+        
         <div class="gallery">
-            <h1>
-                More creations
-            </h1>
             <gallery :filters="gallery.filters" :items="gallery.items"></gallery>
         </div>
 
@@ -64,32 +30,37 @@
                     'All', 'Design concept', 'Web template', 'Software'
                 ],
                 items: [
+
                     {
                         title: 'Save me',
-                        filter: 'Design concept',
-                        link: '/projects/saveme',
-                        img: '/img/assets/projects/saveme/Savemegalleryexport.png'
+                        type: 'Design concept',
+                        background: {
+                            img: '/img/assets/projects/saveme/Savemegalleryexport.png',
+                            gradient: 'linear-gradient(to top right, rgba(53, 102, 255,.6), rgba(120, 38, 255, .6))'
+                        },
+                        links: {
+                            download: 'https://www.google.com',
+                            demo: '/projects/saveme'
+                        },
+                        description:`Save me is a design concept for a savings application dashboard. 
+                                     This application allows you to create multiple bins so thatyou 
+                                     can save for multiple things at the same time.`,
+                        price: {
+                            amount: "FREE"
+                        }
                     }
                 ]
             },
             swiperOption: {
                 loop: true,
-                effect: 'coverflow',
                 grabCursor: false,
                 slidesPerView:'auto',
+                // loopedSlides: 3,
                 centeredSlides: true,
-                coverflowEffect: {
-                    rotate: 0,
-                    stretch: 0,
-                    depth: 400,
-                    modifier: 1,
-                    slideShadows : false,
-                }, 
                 autoplay: {
-                    delay: 2500,
+                    delay: 5000,
                     disableOnInteraction: false,
                 },
-                touchRatio: 0
             }
         }),
         components: {
@@ -178,55 +149,52 @@
         }
     }
 
-
-
-
     .swiper-container {
       width: 100%;
-      padding-top: 50px;
-      padding-bottom: 50px;
       height: calc(100vh - 66px);
     }
     .swiper-slide {
-      background-position: center;
-      background-size: cover;
-      width:70% !important;
-      height: 400px;
-      margin-top:150px;
-        transition:1000ms !important;
-        transition: height 1000ms ease-in-out, margin-top 1000ms ease;
-        /* background:blue; */
-        transform:none !important;
-        /* margin-right: 0 !important; */
+      text-align: center;
+      font-size: 18px;
+      background: #fff;
+      width: 80%;
+      /* Center slide text vertically */
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      display: flex;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      -webkit-justify-content: center;
+      justify-content: center;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      -webkit-align-items: center;
+      align-items: center;
+      background:blue;
+      transform: none !important;
+      transition: 500ms !important;
     }
-    .swiper-slide.swiper-slide-active {
-        height: 600px;
-        margin-top: 50px;
-    }
-    .swiper-slide-next,.swiper-slide-prev{
-         /* transform: translate3d(0px, 0px, -661.652px) rotateX(0deg) rotateY(0deg) !important; */
-    }
-    .swiper-slide-next{
-        margin-right: 150px;
-        /* transform: translate3d(0px 150px, 0px) !important; */
-    }
-    
     .swiper-slide .inner{
-        padding-left: 144px;
-        padding-right: 144px;
-        background:blue;
+        width: 100%;
         height:100%;
-        width:90%;
-        margin-left: 5%;
-        box-sizing:border-box;
+        background: #000;
     }
-    .swiper-1 .inner {
-        background:orange;
+    .swiper-slide .inner{
+        transform:scale(0.8);
+      transition: 500ms !important;
     }
-    .swiper-slide-next .inner{
-        /* margin-left: 15%; */
+    .swiper-slide-active .inner{
+        transform:scale(1);
+      transition: 500ms !important;
     }
-    .swiper-slide-prev .inner{
-        /* margin-left: -5%; */
+    .slide-1{
+        background: orange;
+    }
+    .slide-2{
+        background: green;
+    }
+    .slide-3{
+        background: blue;
     }
 </style>

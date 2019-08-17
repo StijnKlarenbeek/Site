@@ -1,13 +1,15 @@
 <template>
     <div class="section">
-        <div class="padder"></div>
-        <h2 data-aos="fade-up" data-aos-duration="750" >
-            <slot name="subtitle"></slot>    
-        </h2>
-        <h1 data-aos="fade-up" data-aos-duration="750" :class="lightTitleColor">
-            <slot name="title"></slot>
-        </h1>
-        <slot></slot>
+        <div class="inner">
+            <div class="padder"></div>
+            <h2 data-aos="fade-up" data-aos-duration="750" >
+                <slot name="subtitle"></slot>    
+            </h2>
+            <h1 data-aos="fade-up" data-aos-duration="750" :class="lightTitleColor">
+                <slot name="title"></slot>
+            </h1>
+            <slot></slot>
+        </div>
     </div>
 </template>
 
@@ -39,6 +41,16 @@
         padding-left: 48px;
         padding-right: 48px;
         padding-bottom: 96px;
+        display:flex;
+        justify-content: center;
+        align-self: center;
+    }
+    .section .inner{
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        flex-direction:column;
+        width:100%;
     }
     .padder{
         padding-top: 96px;
@@ -82,6 +94,17 @@
             font-weight: normal;
             color: #D0D0D0;
             margin-top: 16px;
+        }
+    }
+
+    @media screen and (min-width:1400px){
+         .inner{
+            max-width:1500px;
+        }
+    }
+    @media screen and (min-width: 1200px) and (max-width: 1400px) {
+         .inner {
+            max-width: 1200px;
         }
     }
     @media screen and (max-width: 1366px){

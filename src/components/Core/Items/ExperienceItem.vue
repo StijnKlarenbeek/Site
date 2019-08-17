@@ -65,7 +65,7 @@
 
 <style scoped>
     .skill {
-        width: 35%;
+        width: 40%;
         padding-bottom: 32px;
         padding-top: 32px;
         border-bottom: 2px solid white;

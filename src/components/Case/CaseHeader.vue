@@ -1,11 +1,17 @@
 <template>
     <header>
         <div class="outer">
-            <button class="go-back-btn" @click="goBack"><i class="fas fa-long-arrow-alt-left"></i>go back</button>
-            <div class="inner">
+            <button class="go-back-btn"
+            data-aos="fade-in" data-aos-duration="750"
+             @click="goBack">
+                <i class="fas fa-long-arrow-alt-left"></i>go back
+            
+            </button>
+            <div class="inner"
+                data-aos="zoom-in" data-aos-duration="750">
                 <div class="left">
                     <!-- Main content-->
-                    <h1>{{title}}</h1>
+                    <h1 >{{title}}</h1>
                     <h2 :class="typeColor">{{type}}</h2>
 
                     <!-- Add description text -->
@@ -28,7 +34,10 @@
                 </div>
                 <div class="right">
                     <!-- Image container-->
-                    <img :src="img" :alt="imgalt">
+                    <img 
+                        data-aos="fade-left" data-aos-duration="750"
+                        :src="img" 
+                        :alt="imgalt">
                 </div>
             </div>
         </div>
@@ -238,6 +247,21 @@ export default {
     @media screen and (min-width:1280px) and (max-width: 1499px) {
         header .outer{
             width:70%;
+        }
+        header .outer .inner {
+            height: 350px;
+        }
+        header .outer .inner .left h1{
+            font-size: 2.2rem;
+        }
+        header .outer .inner .left h2{
+            font-size: 1.5rem;
+        }
+        header .outer .inner .left p{
+            font-size: 1.2rem;
+        }
+        header .outer .inner .right img{
+            height: 450px;
         }
     }
 

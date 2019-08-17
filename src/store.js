@@ -42,8 +42,7 @@ export default new Vuex.Store({
                     animationDelay: '150',
                     animationDuration: '750',
                     style: {
-                        'padding-top': 0,
-                        width: '45%'
+                        'padding-top': 0
                     }
                 },
                 {
@@ -52,10 +51,7 @@ export default new Vuex.Store({
                     location: 'Mobina IT, Enschede',
                     animation: 'fade-up',
                     animationDelay: '300',
-                    animationDuration: '750',
-                    style: {
-                        width: '45%'
-                    }
+                    animationDuration: '750'
                 },
                 {
                     title: 'Co-founder',
@@ -63,10 +59,7 @@ export default new Vuex.Store({
                     location: 'Suprentive, Enschede',
                     animation: 'fade-up',
                     animationDelay: '450',
-                    animationDuration: '750',
-                    style: {
-                        width: '45%'
-                    }
+                    animationDuration: '750'
                 },
                 {
                     title: 'Software Intern',
@@ -76,8 +69,7 @@ export default new Vuex.Store({
                     animationDelay: '450',
                     animationDuration: '750',
                     style: {
-                        'padding-top': 0,
-                        width: '45%'
+                        'padding-top': 0
                     }
                 },
                 {
@@ -86,10 +78,7 @@ export default new Vuex.Store({
                     location: 'Erve Brooks, Gelselaar',
                     animation: 'fade-up',
                     animationDelay: '450',
-                    animationDuration: '750',
-                    style: {
-                        width: '45%'
-                    }
+                    animationDuration: '750'
                 },
                 {
                     title: 'Stocker / Warehousing',
@@ -98,9 +87,6 @@ export default new Vuex.Store({
                     animation: 'fade-up',
                     animationDelay: '450',
                     animationDuration: '750',
-                    style: {
-                        width: '45%'
-                    }
                 }
             ],
         },

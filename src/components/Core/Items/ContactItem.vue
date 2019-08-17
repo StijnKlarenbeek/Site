@@ -57,7 +57,7 @@
 
 <style scoped>
     .skill {
-        width: 70%;
+        width: 97%;
         padding-top: 16px;
         color: white;
     }

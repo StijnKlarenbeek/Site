@@ -1,7 +1,8 @@
+// http://www.vaxliu.com/experience/
 <template>
     <div id="app">
         <Nav/>
-        <img class="me-img" src="img/forthebf.png">
+        <!-- <img class="me-img" src="img/forthebf.png"> -->
         <transition name="component-fade" mode="out-in">
             <router-view/>
         </transition>
@@ -19,7 +20,7 @@
     }
 </script>
 <style lang="scss">
-    @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,500,600,700&display=swap');
+    @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,500,600,700&display=swap');
     /*@import url('https://fonts.googleapis.com/css?family=Nunito:400,600,700,800&display=swap');*/
     /*@import url('https://fonts.googleapis.com/css?family=Kanit:400,500,600,700&display=swap');*/
      * {
@@ -29,7 +30,7 @@
      }
     html, body {
         background: #000000;
-        font-family: 'Source Sans Pro', sans-serif;
+        font-family: 'Open Sans', sans-serif;
         /*font-family: 'Nunito', sans-serif;*/
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;

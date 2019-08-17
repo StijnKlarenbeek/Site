@@ -1,42 +1,44 @@
 <template>
 
     <div id="nav">
-        <div class="burger" data-nav-target="prim_bar">
-            <svg class="navburgerbars" viewBox="0 0 100 100" @click="switchNavActive">
-                <path class="line top" d="m 30,33 h 40 c 13.100415,0 14.380204,31.80258 6.899646,33.421777 -24.612039,5.327373 9.016154,-52.337577 -12.75751,-30.563913 l -28.284272,28.284272"></path>
-                <path class="line middle" d="m 70,50 c 0,0 -32.213436,0 -40,0 -7.786564,0 -6.428571,-4.640244 -6.428571,-8.571429 0,-5.895471 6.073743,-11.783399 12.286435,-5.570707 6.212692,6.212692 28.284272,28.284272 28.284272,28.284272"></path>
-                <path class="line bottom" d="m 69.575405,67.073826 h -40 c -13.100415,0 -14.380204,-31.80258 -6.899646,-33.421777 24.612039,-5.327373 -9.016154,52.337577 12.75751,30.563913 l 28.284272,-28.284272"></path>
-            </svg>
-        </div>
-        <div class="left">
-            <router-link class="brand" to="/">
-                <img src="@/assets/icon.png" alt="">
-                <span class="all-except-ipad">
-                    STIJN KLARENBEEK
-                </span>
-                <span class="ipad-only">
-                    SK
-                </span>
-            </router-link>
-        </div>
-        <div class="right">
-            <router-link to="/projects">
-                Projects
-            </router-link>
-            <dropdown-menu ref="dropdown" v-model="resumeNavOpen">
-                Resume
-                <template v-slot:dropdown>
-                    <li>
-                        <a target="_blank" href="/img/cv/CV Dutch.pdf">Dutch resume</a>
-                    </li>
-                    <li>
-                        <a target="_blank" href="/img/cv/CV English.pdf">English resume</a>
-                    </li>
-                    <li>
-                        <router-link to="/resume">Online resume</router-link>
-                    </li>
-                </template>
-            </dropdown-menu>
+        <div class="inner">
+            <div class="burger" data-nav-target="prim_bar">
+                <svg class="navburgerbars" viewBox="0 0 100 100" @click="switchNavActive">
+                    <path class="line top" d="m 30,33 h 40 c 13.100415,0 14.380204,31.80258 6.899646,33.421777 -24.612039,5.327373 9.016154,-52.337577 -12.75751,-30.563913 l -28.284272,28.284272"></path>
+                    <path class="line middle" d="m 70,50 c 0,0 -32.213436,0 -40,0 -7.786564,0 -6.428571,-4.640244 -6.428571,-8.571429 0,-5.895471 6.073743,-11.783399 12.286435,-5.570707 6.212692,6.212692 28.284272,28.284272 28.284272,28.284272"></path>
+                    <path class="line bottom" d="m 69.575405,67.073826 h -40 c -13.100415,0 -14.380204,-31.80258 -6.899646,-33.421777 24.612039,-5.327373 -9.016154,52.337577 12.75751,30.563913 l 28.284272,-28.284272"></path>
+                </svg>
+            </div>
+            <div class="left">
+                <router-link class="brand" to="/">
+                    <img src="@/assets/icon.png" alt="">
+                    <span class="all-except-ipad">
+                        STIJN KLARENBEEK
+                    </span>
+                    <span class="ipad-only">
+                        SK
+                    </span>
+                </router-link>
+            </div>
+            <div class="right">
+                <router-link to="/projects">
+                    Projects
+                </router-link>
+                <dropdown-menu ref="dropdown" v-model="resumeNavOpen">
+                    Resume
+                    <template v-slot:dropdown>
+                        <li>
+                            <a target="_blank" href="/img/cv/CV Dutch.pdf">Dutch resume</a>
+                        </li>
+                        <li>
+                            <a target="_blank" href="/img/cv/CV English.pdf">English resume</a>
+                        </li>
+                        <li>
+                            <router-link to="/resume">Online resume</router-link>
+                        </li>
+                    </template>
+                </dropdown-menu>
+            </div>
         </div>
     </div>
 </template>
@@ -88,7 +90,7 @@
         padding: 8px 48px;
         position:relative;
         display: flex;
-        justify-content: space-between;
+        justify-content: center;
         position: fixed;
         align-items: center;
         top: 0;
@@ -96,42 +98,51 @@
         width: 100%;
         z-index: 9099;
         box-sizing: border-box;
-        background: rgba(0,0,0,.8);
+        background: #000;
 
-        a {
-            font-weight: bold;
-            text-decoration: none;
-            font-size: 1.5rem;
-            color: rgba(255,255,255,.4);
-            display:inline-block;
-            box-sizing:border-box;
-            margin-right: 16px;
-            margin-left: 16px;
-            transition:250ms;
+        .inner{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
 
-            &.brand {
-                opacity: 1;
-                color: white;
-                font-size: 1.5rem;
-                display:flex;
-                justify-content: flex-start;
-                align-items: center;
-            }
 
-            &.router-link-exact-active {
-                opacity: 1;
-                color: rgba(255,255,255,1);
-            }
+                a {
+                    font-weight: bold;
+                    text-decoration: none;
+                    font-size: 1.5rem;
+                    color: rgba(255,255,255,.4);
+                    display:inline-block;
+                    box-sizing:border-box;
+                    margin-right: 16px;
+                    margin-left: 16px;
+                    transition:250ms;
 
-            &:hover{
-                color: #fff;
-                transition:250ms;
-            }
-        }
+                    &.brand {
+                        opacity: 1;
+                        color: white;
+                        font-size: 1.5rem;
+                        display:flex;
+                        justify-content: flex-start;
+                        align-items: center;
+                    }
 
-        img {
-            margin-right: 16px;
-            width: 50px;
+                    &.router-link-exact-active {
+                        opacity: 1;
+                        color: rgba(255,255,255,1);
+                    }
+
+                    &:hover{
+                        color: #fff;
+                        transition:250ms;
+                    }
+                }
+
+                img {
+                    margin-right: 16px;
+                    width: 50px;
+                }
+
         }
     }
 
@@ -204,6 +215,16 @@
     }
 
     
+    @media screen and (min-width:1400px){
+        #nav .inner{
+            max-width:1500px;
+        }
+    }
+    @media screen and (min-width: 1200px) and (max-width: 1400px) {
+        #nav .inner {
+            max-width: 1200px;
+        }
+    }
 
     @media screen and (min-width: 768px) {
 
