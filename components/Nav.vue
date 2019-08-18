@@ -205,11 +205,11 @@ export default {
 }
 
 .dropdown-wrapper ul li a:hover {
-  background: #4353ff;
+  background: rgb(90, 82, 255);
   color: white !important;
-  -webkit-box-shadow: 0px 13px 57px -12px #4353ff;
-  -moz-box-shadow: 0px 13px 57px -12px #4353ff;
-  box-shadow: 0px 13px 57px -12px #4353ff;
+  -webkit-box-shadow: 0px 13px 57px -12px rgb(90, 82, 255);
+  -moz-box-shadow: 0px 13px 57px -12px rgb(90, 82, 255);
+  box-shadow: 0px 13px 57px -12px rgb(90, 82, 255);
   transition: 250ms;
 }
 

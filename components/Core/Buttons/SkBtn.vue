@@ -72,6 +72,7 @@ export default {
 <style scoped>
 /**Default btn styles**/
 .btn {
+  display:inline-block;
   background: white;
   border: 1px solid white;
   color: black;

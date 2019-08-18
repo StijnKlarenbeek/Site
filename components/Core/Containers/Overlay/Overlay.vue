@@ -98,6 +98,11 @@ export default {
   opacity: 1;
   transition: 250ms;
 }
+    @media screen and (min-width:1280px) and (max-width: 1499px) {
+      .overlay.hero{
+        height: 400px;
+      }
+    }
 @media screen and (min-width: 768px) and (max-width: 1024px) {
   .overlay.hero {
     height: 400px;

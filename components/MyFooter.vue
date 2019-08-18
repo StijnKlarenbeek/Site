@@ -125,6 +125,7 @@
 <style scoped>
     footer {
         background: #0b0b0b;
+        background:#000;
         color: #fff;
         padding: 96px 48px;
     }

@@ -96,10 +96,21 @@ export default {
         .case-concept-container .inner{
             width:60%;
         }
+        .case-concept-container img{
+            width:500px;
+        }
     }
     @media screen and (min-width:1280px) and (max-width: 1499px) {
         .case-concept-container .inner{
             width:70%;
+        }
+        .case-concept-container img{
+            width:750px;
+            height: auto;
+            right: -250px;
+        }
+        p{
+            font-size: 1.1rem;
         }
     }
 </style>

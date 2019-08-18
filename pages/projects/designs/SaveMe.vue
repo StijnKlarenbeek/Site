@@ -25,12 +25,14 @@
       <br />
       <br />This project however, will remain as a design concept for now. Feel free to download the files from up top.
     </case-concept>
+    <my-footer></my-footer>
   </div>
 </template>
 
 <script>
 import CaseHeader from "@/components/Case/CaseHeader";
 import CaseConcept from "@/components/Case/CaseConcept";
+import MyFooter from '@/components/MyFooter';
 
 export default {
   head() {
@@ -47,7 +49,8 @@ export default {
   },
   components: {
     CaseHeader,
-    CaseConcept
+    CaseConcept,
+    MyFooter
   },
   scrollBehavior (to, from, savedPosition) {
     return new Promise((resolve, reject) => {

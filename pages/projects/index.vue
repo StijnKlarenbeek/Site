@@ -34,7 +34,9 @@ export default {
           background: {
             img: "/img/assets/projects/saveme/Savemegalleryexport.png",
             gradient:
-              "linear-gradient(to top right, rgba(53, 102, 255,.6), rgba(120, 38, 255, .6))"
+              "linear-gradient(to top right, rgba(255, 84, 109,.8), rgba(198, 0, 255, .6))"
+            // gradient:
+            //   "linear-gradient(to top right, rgba(53, 102, 255,.6), rgba(120, 38, 255, .6))"
           },
           links: {
             download: "https://github.com/stijn-klarenbeek/Design-concepts/releases/download/v1/Save.me.dashboard.zip",

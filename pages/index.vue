@@ -58,12 +58,21 @@
               data-aos-duration="750"
               class="mt-8"
             >This great tool lets you monitor, plan and keep track of your students performance without any hasle.</big-text>
-            <my-link
+            
+            
+              <sk-btn 
+                  data-aos="fade-right"
+                  data-aos-duration="750"
+                  to="/projects/designs/saveme" color="quartenary" is-item rounded class="mt-1">
+                VIEW
+                <i class="fa fa-long-arrow-alt-right"></i>
+              </sk-btn>
+            <!-- <my-link
               data-aos="fade-right"
               data-aos-duration="750"
               class="mt-8"
               to="/projects/designs/saveme"
-            >check it out</my-link>
+            >check it out</my-link> -->
           </div>
         </template>
       </split-container>
@@ -160,6 +169,16 @@ export default {
 }
 .ml32 {
   margin-left: 32px;
+}
+
+.mt-1{
+  margin-top: 16px;
+}
+.mt-2{
+  margin-top: 32px;
+}
+.mt-3{
+  margin-top: 48px;
 }
 
 .home {
