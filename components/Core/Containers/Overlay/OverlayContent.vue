@@ -6,7 +6,7 @@
         <cont-header>
             <slot name="title"></slot>
         </cont-header>
-        <sk-btn :to="to" color="">
+        <sk-btn :to="to" color="" is-item rounded outlined>
             <slot></slot>
         </sk-btn>
     </div>

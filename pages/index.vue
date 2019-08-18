@@ -13,12 +13,12 @@
           </template>
           <template>
             <div class="btn-row" data-aos="fade-up" data-aos-duration="750" data-aos-delay="450">
-              <sk-btn to="/projects" color>
+              <sk-btn to="/projects" color is-item rounded outlined>
                 PROJECTS
                 <i class="fa fa-long-arrow-alt-right"></i>
               </sk-btn>
 
-              <sk-btn to="/resume" color="teal" class="ml32 ml-p-1 mt-p-2">
+              <sk-btn to="/resume" color="teal" is-item rounded outlined class="ml32 ml-p-1 mt-p-2">
                 RESUME
                 <i class="fa fa-long-arrow-alt-right"></i>
               </sk-btn>

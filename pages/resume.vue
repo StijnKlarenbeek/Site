@@ -1,6 +1,7 @@
 <template>
   <div class="home">
     <div>
+      <!-- Who am I -->
       <compartment id="whoami">
         <template v-slot:title>01.&nbsp;&nbsp;Who am I?</template>
         <p data-aos="fade-up" data-aos-duration="750" data-aos-delay="150">
@@ -33,6 +34,8 @@
           </div>
         </div>
       </compartment>
+
+      <!-- Contact -->
       <compartment id="contact">
         <template v-slot:title>05. Get in touch</template>
         <div class="row break-phone">

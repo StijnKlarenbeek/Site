@@ -42,6 +42,10 @@ export default {
     isItem: {
       type: Boolean,
       default: false
+    },
+    outlined: {
+      type: Boolean,
+      default: false
     }
   },
   computed: {
@@ -57,7 +61,8 @@ export default {
         white: this.color.includes('white'),
         "dark-teal": this.color.includes("dark-teal"),
         "phone-block": this.phoneBlock,
-        "item-btn": this.isItem
+        "item-btn": this.isItem,
+        'outlined': this.outlined
       };
     }
   }
@@ -79,6 +84,13 @@ export default {
   border-radius: 2px;
   transition: 250ms;
 }
+
+.btn:hover {
+  background: transparent;
+  color: white;
+  transition: 250ms;
+}
+
 .btn.item-btn {
   font-size: 1.1rem;
   font-weight: bolder;
@@ -86,16 +98,19 @@ export default {
   padding-left: 1.5rem;
   padding-right: 1.5rem;
 }
+
+.btn.outlined {
+  border: 1px solid transparent;
+}
+.btn.outlined:hover{
+  border-color:white;
+}
+
 .btn i {
   display: inline-block;
   margin-left: 1rem;
 }
 
-.btn:hover {
-  background: transparent;
-  color: white;
-  transition: 250ms;
-}
 .btn.rounded {
   border-radius: 30px;
 }
@@ -105,6 +120,15 @@ export default {
   background: rgb(104, 255, 209);
   border-color: rgb(104, 255, 209);
   color: rgba(0,0,0,.5);
+}
+
+.btn.teal:hover {
+  background: transparent;
+  color: #68ffd1;
+}
+
+.btn.teal.outlined:hover{
+  border-color: rgb(104, 255, 209);
 }
 
 .btn.dark-teal {
@@ -125,10 +149,6 @@ export default {
   color: #fff;
 }
 
-.btn.teal:hover {
-  background: transparent;
-  color: #68ffd1;
-}
 .btn.teal.opacified {
   background: rgba(104, 255, 209, 0.35);
   color: #68ffd1;
