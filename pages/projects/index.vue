@@ -119,7 +119,6 @@ export default {
   width: 100%;
   height: auto;
   background: rgb(32, 34, 43);
-  min-height: 900px;
 }
 
 .gallery h1 {

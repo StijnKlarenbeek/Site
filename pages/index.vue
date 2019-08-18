@@ -62,7 +62,7 @@
               data-aos="fade-right"
               data-aos-duration="750"
               class="mt-8"
-              to="/projects/saveme"
+              to="/projects/designs/saveme"
             >check it out</my-link>
           </div>
         </template>
