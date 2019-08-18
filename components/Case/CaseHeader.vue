@@ -26,7 +26,7 @@
                         </button>
                         <span>or</span>
 
-                        <sk-btn href="/" target="_blank" color="primary" class="download-btn">
+                        <sk-btn :href="href" target="_blank" color="primary" class="download-btn">
                             DOWNLOAD 
                             <i class="fas fa-long-arrow-alt-right"></i>  
                         </sk-btn>
@@ -83,6 +83,9 @@ export default {
         imgalt: {
             type: String,
             required: true
+        },
+        href: {
+            type: String
         }
     },
     methods: {

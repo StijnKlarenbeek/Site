@@ -1,6 +1,7 @@
 <template>
   <div class="work">
     <div class="gallery">
+      <h1>My projects</h1>
       <gallery :filters="gallery.filters" :items="gallery.items"></gallery>
     </div>
 
@@ -36,7 +37,7 @@ export default {
               "linear-gradient(to top right, rgba(53, 102, 255,.6), rgba(120, 38, 255, .6))"
           },
           links: {
-            download: "https://www.google.com",
+            download: "https://github.com/stijn-klarenbeek/Design-concepts/releases/download/v1/Save.me.dashboard.zip",
             demo: "/projects/designs/saveme"
           },
           description: `Save me is a design concept for a savings application dashboard. 
@@ -46,6 +47,25 @@ export default {
             amount: "FREE"
           }
         }
+        // {
+        //   title: "Save me",
+        //   type: "Design concept",
+        //   background: {
+        //     img: "/img/assets/projects/saveme/Savemegalleryexport.png",
+        //     gradient:
+        //       "linear-gradient(to top right, rgba(255, 84, 109,.8), rgba(198, 0, 255, .6))"
+        //   },
+        //   links: {
+        //     download: "https://www.google.com",
+        //     demo: "/projects/designs/saveme"
+        //   },
+        //   description: `Save me is a design concept for a savings application dashboard.
+        //                              This application allows you to create multiple bins so thatyou
+        //                              can save for multiple things at the same time.`,
+        //   price: {
+        //     amount: "FREE"
+        //   }
+        // },
       ]
     }
   }),
@@ -78,6 +98,13 @@ export default {
 
     //Gallery
     Gallery
+  },
+  scrollBehavior(to, from, savedPosition) {
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        resolve({ x: 0, y: 0 });
+      }, 450);
+    });
   }
 };
 </script>
@@ -91,15 +118,54 @@ export default {
 .gallery {
   width: 100%;
   height: auto;
-  background: #000;
+  background: rgb(32, 34, 43);
+  min-height: 900px;
 }
 
 .gallery h1 {
-  padding-top: 92px;
-  padding-left: 48px;
+  padding-top: 122px;
   padding-right: 48px;
   color: #fff;
-  font-size: 3.75rem;
-  line-height: 3.75rem;
+  margin-bottom: -28px;
+  font-size: 3rem;
+  line-height: 2.75rem;
+  margin-left: 30%;
+}
+@media screen and (min-width: 1500px) and (max-width: 1920px) {
+  .gallery h1 {
+    margin-left: 25%;
+  }
+}
+@media screen and (min-width: 1280px) and (max-width: 1499px) {
+  .gallery h1 {
+    margin-left: 20%;
+    font-size: 2.5rem;
+  }
+}
+@media screen and (min-width: 1024px) and (max-width: 1280px) {
+  .gallery h1 {
+    margin-left: 15%;
+    font-size: 2.5rem;
+  }
+}
+@media screen and (min-width: 845px) and (max-width: 1024px) {
+  .gallery h1 {
+    margin-left: 7.5%;
+    font-size: 2.5rem;
+  }
+}
+@media screen and (min-width: 570px) and (max-width: 845px) {
+  .gallery h1 {
+    margin-left: 10%;
+    font-size: 2.5rem;
+  }
+}
+@media screen and (max-width: 570px) {
+  .gallery h1 {
+    margin-left: 0;
+    padding-left: 24px;
+    font-size: 2.25rem;
+    margin-bottom: -40px;
+  }
 }
 </style>

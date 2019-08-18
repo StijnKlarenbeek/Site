@@ -1,10 +1,5 @@
 <template>
   <div class="gallery">
-    <div class="bar">
-      <!-- Search container -->
-
-      <!-- Dropdown button -->
-    </div>
     <div class="content">
       <!-- Loop throguh all the items -->
       <div class="item" v-for="(item, index) in items" :key="index">
@@ -25,15 +20,17 @@
               :to="item.links.demo"
               target="_blank"
               rounded
-              color="tertiary opacified"
-              class="ml-2 ml-p-0 mt-p-2"
+              is-item
+              color="white"
+              class="ml-0 ml-p-0 mt-p-2"
             >View case</sk-btn>
 
             <sk-btn
               :href="item.links.download"
               target="_blank"
               rounded
-              color="tertiary"
+              is-item
+              color="quartenary"
               class="ml-2 ml-p-1 mt-p-2"
             >Download</sk-btn>
           </div>
@@ -45,7 +42,6 @@
 
 <script>
 import SkBtn from "@/components/Core/Buttons/SkBtn";
-import DropdownMenu from "@/components/Core/Buttons/DropdownMenu";
 
 export default {
   name: "Gallery",
@@ -115,9 +111,10 @@ export default {
         return this.filtered.indexOf(item.filter) > -1;
       });
     }
+    
   },
   components: {
-    SkBtn,DropdownMenu
+    SkBtn
   }
 };
 </script>
@@ -135,6 +132,7 @@ export default {
   width: 100%;
   margin-top: 56px;
   background: #151515;
+  background: rgb(43, 45, 56);
   height: 60px;
   display: flex;
   justify-content: center;
@@ -143,13 +141,18 @@ export default {
   position: sticky;
   top: 66px; /* required */
   list-style: none;
+  z-index: 9999;
+}
+
+.gallery .bar .inner {
+  width: 60%;
 }
 
 .gallery .content {
   width: 40%;
   /* min-height: 800px; */
   margin-left: 30%;
-  padding-top: 60px;
+  padding-top: 30px;
   padding-bottom: 120px;
 }
 
@@ -157,14 +160,15 @@ export default {
 .gallery .content .item {
   /* height: 300px; */
   background: #2e2e2e;
-  margin-top: 50px;
+  background: rgb(43, 45, 56);
+  margin-top: 90px;
   border-radius: 5px;
   display: flex;
   justify-content: flex-start;
 
-  -webkit-box-shadow: 0px 10px 49px -9px rgba(255, 255, 255, 0.3);
+  /* -webkit-box-shadow: 0px 10px 49px -9px rgba(255, 255, 255, 0.3);
   -moz-box-shadow: 0px 10px 49px -9px rgba(255, 255, 255, 0.3);
-  box-shadow: 0px 10px 49px -9px rgba(255, 255, 255, 0.3);
+  box-shadow: 0px 10px 49px -9px rgba(255, 255, 255, 0.3); */
 }
 .gallery .content .item .left {
   width: 50%;

@@ -153,7 +153,7 @@
     }
 
     span.copyright {
-        color: #ADADAD;
+        color:rgb(125, 130, 156);
         display:inline-block;
         margin-left: 66px;
         margin-top: 16px;

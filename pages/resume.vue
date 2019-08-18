@@ -80,7 +80,6 @@ import MyFooter from "@/components/MyFooter";
 
 export default {
   name: "home",
-
   data() {
     return {
       scholing: [

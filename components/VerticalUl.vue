@@ -30,14 +30,15 @@
         width: 100%;
     }
     ul li.title{
-        color: #ADADAD;
+        color: #fff;
+        font-weight: bold;
         text-transform: uppercase;
         margin-bottom: 8px;
     }
     ul li a {
         width: 100%;
         font-size: 1.1rem;
-        color: #fff;
+        color:rgb(125, 130, 156);
         display:block;
         padding-top: 8px;
         padding-bottom: 8px;

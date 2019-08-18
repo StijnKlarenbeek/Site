@@ -74,7 +74,7 @@
     .split-container .left, .split-container .right{
         width: 50%;
         overflow: hidden;
-        background: #0b0b0b;
+        background:rgb(32, 34, 43);
     }
 
     /**The styles for the text content container**/

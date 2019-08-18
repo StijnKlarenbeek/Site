@@ -5,6 +5,7 @@
       type="Design Concept"
       img="/img/assets/cases/saveme/header.png"
       imgalt="header img"
+      href="https://github.com/stijn-klarenbeek/Design-concepts/releases/download/v1/Save.me.dashboard.zip"
     >
       <!-- Descriptio -->
       Save me is a design concept for a savings application dashboard.
@@ -47,6 +48,13 @@ export default {
   components: {
     CaseHeader,
     CaseConcept
+  },
+  scrollBehavior (to, from, savedPosition) {
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        resolve({ x: 0, y: 0 })
+      }, 450)
+    })
   }
 };
 </script>
