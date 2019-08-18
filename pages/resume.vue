@@ -332,7 +332,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .home {
   position: relative;
   z-index: 3;

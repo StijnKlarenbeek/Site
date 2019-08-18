@@ -54,6 +54,10 @@
             nav: {
                 type: Boolean,
                 default: false
+            },
+            onHover: {
+                type: Boolean,
+                default: false
             }
         },
         methods: {
@@ -70,7 +74,7 @@
             dropdownClasses(){
                 return {
                     'dropdown-menu' : true,
-                    nav: this.nav
+                    nav: this.nav,
                 }
             }
         }
@@ -82,6 +86,8 @@
         display:inline-block;
         position:relative;
     }
+
+
     button{
         background:rgba(255,255,255,.2);
         border-radius:45px;
