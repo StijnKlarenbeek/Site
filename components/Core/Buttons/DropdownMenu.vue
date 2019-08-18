@@ -21,7 +21,6 @@
           height="10"
           viewBox="0 0 48 10"
           fill="none"
-          transform="rotate(180)"
         >
           <path
             d="M28.8 8.00002C33.8925 2.87765 40.7987 0 48 0H0C7.20132 0 14.1075 2.87765 19.2 8.00002C21.8511 10.6667 26.1489 10.6667 28.8 8.00002Z"
@@ -118,6 +117,7 @@ button:hover {
   fill: white;
   position: absolute;
   right: 10px;
+  transform: rotate(180deg);
 }
 .dropdown-wrapper ul {
   background: #ffffff;
