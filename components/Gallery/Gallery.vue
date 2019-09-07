@@ -239,8 +239,8 @@ export default {
 }
 
 .gallery .content .item .right .button-row {
-  margin-top: 40px;
-  padding-bottom: 48px;
+  margin-top: 24px;
+  padding-bottom: 40px;
 }
 
 @media screen and (min-width: 1500px) and (max-width: 1920px) {

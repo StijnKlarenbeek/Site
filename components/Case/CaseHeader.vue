@@ -1,5 +1,5 @@
 <template>
-    <header>
+    <header id="case_header">
         <div class="outer">
             <button class="go-back-btn"
             data-aos="fade-in" data-aos-duration="750"
@@ -21,12 +21,12 @@
 
                     <!-- Btn row-->
                     <div class="btn-case-row">
-                        <button class="view-case-btn">
+                        <button @click="scrollDown()" type="button" class="view-case-btn">
                             <i class="fas fa-long-arrow-alt-down"></i> VIEW CASE
                         </button>
                         <span>or</span>
 
-                        <sk-btn :href="href" target="_blank" color="primary" class="download-btn">
+                        <sk-btn :href="href" target="_blank" color="quartenary" is-item rounded class="download-btn">
                             DOWNLOAD 
                             <i class="fas fa-long-arrow-alt-right"></i>  
                         </sk-btn>
@@ -91,6 +91,12 @@ export default {
     methods: {
         goBack() {
             this.$router.go(-1);
+        },
+        scrollDown() {
+            var el = document.getElementById("case_header");
+            var rect =el.getBoundingClientRect();
+            console.log(rect.bottom);
+            window.scrollTo(0,rect.bottom);
         }
     },
     computed: {
@@ -223,10 +229,14 @@ export default {
     header .outer .inner .left .btn-case-row .view-case-btn{
         font-size: 1.2rem;
         margin-right: .75rem;
+        cursor:pointer;
     }
     header .outer .inner .left .btn-case-row .view-case-btn i{
         display:inline-block;
         margin-right: 0.3rem;
+    }
+    header .outer .inner .left .btn-case-row .view-case-btn:hover{
+        text-shadow:0.2px 0.2px 0.2px white;
     }
 
     /**Download btn**/
@@ -249,7 +259,7 @@ export default {
     }
     @media screen and (min-width:1280px) and (max-width: 1499px) {
         header .outer{
-            width:70%;
+            width:75%;
         }
         header .outer .inner {
             height: 350px;
@@ -278,13 +288,38 @@ export default {
         }
     }
     @media screen and (min-width:882px) and (max-width: 1279px) {
+        header .outer .inner {
+            height: 350px;
+        }
+        header .outer .inner .left h1{
+            font-size: 2.2rem;
+        }
+        header .outer .inner .left h2{
+            font-size: 1.5rem;
+        }
+        header .outer .inner .left p{
+            font-size: 1.2rem;
+        }
+        header .outer .inner .right img{
+            height: 500px;
+        }
+    }
+    @media screen and (min-width:1045px) and (max-width: 1279px) {
+
+        /**Outer container (with back button)**/
+        header .outer{
+            width:90%;
+        }
+    }
+    @media screen and (min-width: 928px) and (max-width:1044px) {
+
         /**Outer container (with back button)**/
         header .outer{
             width:100%;
             padding: 0 48px;
         }
     }
-    @media screen and (min-width: 680px) and (max-width:881px){
+    @media screen and (min-width: 680px) and (max-width:927px){
         /**Outer container (with back button)**/
         header .outer{
             width:80%;
@@ -301,7 +336,7 @@ export default {
 
 
     /**Ipad and mobile styling**/
-    @media screen and (min-width: 0px) and (max-width:881px){
+    @media screen and (min-width: 0px) and (max-width:927px){
         /**Inner container(without back button)**/
         header .outer .inner{
             flex-wrap:wrap;

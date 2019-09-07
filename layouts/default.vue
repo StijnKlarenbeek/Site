@@ -35,6 +35,7 @@
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
         width: 100%;
+        scroll-behavior: smooth;
     }
     #app {
         left: 0;

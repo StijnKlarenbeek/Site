@@ -109,6 +109,13 @@
             padding-right: 72px;
         }
     }
+    @media screen and (max-width: 850px){
+        
+        .split-container .content-cont{
+            padding-left: 36px;
+            padding-right: 36px;
+        }
+    }
 
     /**Change height of container on small screens**/
     @media screen and (max-width: 1024px) {
