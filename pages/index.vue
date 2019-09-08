@@ -2,31 +2,31 @@
   <div class="home">
     <div>
       <!-- header -->
-      <hero>
+      <hero class="landing_hero" >
         <!-- Hero content-->
         <hero-content>
-          <template v-slot:subtitle>HELLO</template>
-          <template v-slot:title>MY NAME IS STIJN</template>
+          <!-- <template v-slot:subtitle>HELLO</template> -->
+          <template v-slot:title>Hi, I'm Stijn</template>
           <template v-slot:text>
-            My name is Stijn Klarenbeek and I am an enthusiastic and motivated software developer.
+            My name is Stijn Klarenbeek and I am a UI designer and software developer.
             I am always looking for new ideas and designs and I'm always working to get better.
           </template>
           <template>
             <div class="btn-row" data-aos="fade-up" data-aos-duration="750" data-aos-delay="450">
-              <sk-btn to="/projects" color is-item rounded outlined>
+              <sk-btn to="/projects" color is-item rounded fwnormal outlined>
                 PROJECTS
-                <i class="fa fa-long-arrow-alt-right"></i>
+                <!-- <i class="fa fa-long-arrow-alt-right"></i> -->
               </sk-btn>
 
-              <sk-btn to="/resume" color="teal" is-item rounded outlined class="ml32 ml-p-1 mt-p-2">
+              <sk-btn to="/resume" color="quartenary" is-item rounded fwnormal class="ml32 ml-p-1 mt-p-2">
                 RESUME
-                <i class="fa fa-long-arrow-alt-right"></i>
+                <!-- <i class="fa fa-long-arrow-alt-right"></i> -->
               </sk-btn>
             </div>
           </template>
         </hero-content>
 
-        <overlay
+        <!-- <overlay
           data-aos="fade-left"
           data-aos-duration="1050"
           :is-hero="true"
@@ -37,7 +37,7 @@
             <template v-slot:title>Saveme Dashboard</template>
             <template>CHECK IT OUT</template>
           </overlay-content>
-        </overlay>
+        </overlay> -->
       </hero>
 
       <split-container>
@@ -183,6 +183,11 @@ export default {
   position: relative;
   z-index: 3;
   padding-top: 66px;
+}
+.landing_hero{
+  background:url('/img/headers/landing_hero.png');
+  background-size:cover;
+  background-position:center;
 }
 
 /**Btn row**/

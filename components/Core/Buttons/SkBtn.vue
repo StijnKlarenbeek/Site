@@ -46,6 +46,10 @@ export default {
     outlined: {
       type: Boolean,
       default: false
+    },
+    fwnormal: {
+      type: Boolean,
+      default: false
     }
   },
   computed: {
@@ -59,6 +63,7 @@ export default {
         opacified: this.color.includes("opacified"),
         rounded: this.rounded,
         white: this.color.includes('white'),
+        fwnormal: this.fwnormal,
         "dark-teal": this.color.includes("dark-teal"),
         "phone-block": this.phoneBlock,
         "item-btn": this.isItem,
@@ -98,6 +103,9 @@ export default {
   border: none;
   padding-left: 1.5rem;
   padding-right: 1.5rem;
+}
+.btn.fwnormal{
+  font-weight: normal;
 }
 
 .btn.outlined {

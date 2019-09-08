@@ -24,7 +24,7 @@ export default {
 
     .header .inner{
         display:flex;
-        justify-content: center;
+        justify-content: space-between;
         align-items:center;
     }
     .header .inner .hero-content{

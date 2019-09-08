@@ -95,7 +95,6 @@ export default {
         scrollDown() {
             var el = document.getElementById("case_header");
             var rect =el.getBoundingClientRect();
-            console.log(rect.bottom);
             window.scrollTo(0,rect.bottom);
         }
     },
