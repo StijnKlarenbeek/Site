@@ -40,7 +40,8 @@
              data-aos-delay="150"
              data-aos-duration="750">
             <span class="copyright">
-                &#9400; 2018 - {{year}} Stijn Klarenbeek &mdash; All rights reserved 
+                &#9400; 2018 - {{year}} Stijn Klarenbeek 
+                <!-- &mdash; All rights reserved  -->
                 <!-- &nbsp;&mdash;&nbsp; <nuxt-link to="/license">license and terms</nuxt-link> -->
             </span>
         </div>
@@ -68,11 +69,11 @@
                             en: 'Projects',
                             link: '/projects'
                         },
-                        {
-                            nl: 'Resume',
-                            en: 'Resume',
-                            link: '/onlinecv'
-                        }
+                        // {
+                        //     nl: 'Resume',
+                        //     en: 'Resume',
+                        //     link: '/onlinecv'
+                        // }
                     ],
                 },
                 // {
