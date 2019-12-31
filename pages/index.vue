@@ -9,7 +9,7 @@
           <template v-slot:title>Hi, I'm Stijn</template>
           <template v-slot:text>
             My name is Stijn Klarenbeek and I am a UI designer and software developer.
-            I am always looking for new ideas and designs and I'm always working to get better.
+            I am always looking for new ideas and designs.
           </template>
           <template>
             <div class="btn-row" data-aos="fade-up" data-aos-duration="750" data-aos-delay="450">

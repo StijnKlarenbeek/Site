@@ -21,6 +21,7 @@ p {
   padding: 0;
   margin: 0;
   font-size: 1.45rem;
+  line-height: 2.25rem;
   font-weight: normal;
   color: #d0d0d0;
   margin-top: 10px;

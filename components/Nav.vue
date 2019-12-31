@@ -35,9 +35,9 @@
             <li>
               <a target="_blank" href="/img/cv/CV English.pdf">English resume</a>
             </li>
-            <!-- <li>
+            <li>
               <nuxt-link to="/resume">Online resume</nuxt-link>
-            </li> -->
+            </li>
           </template>
         </dropdown-menu>
       </div>
